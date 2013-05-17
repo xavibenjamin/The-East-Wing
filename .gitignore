@@ -1,0 +1,57 @@
+# --- Ignore core WP files, while allowing wp-content/ directory
+ 
+/index.php
+/license.txt
+/readme.html
+/wp-activate.php
+/wp-admin/
+/wp-blog-header.php
+/wp-comments-post.php
+/wp-config-sample.php
+/wp-cron.php
+/wp-includes/
+/wp-links-opml.php
+/wp-load.php
+/wp-login.php
+/wp-mail.php
+/wp-settings.php
+/wp-signup.php
+/wp-trackback.php
+/xmlrpc.php
+ 
+# --- Ignore uploads
+ 
+/uploads/
+
+/advanced-cache.php
+/backup-c25c2
+/cache
+/db.php
+/install.php
+/object-cache.php
+/w3-total-cache-config-preview.php
+/w3tc-config
+ 
+# --- Ignore globally
+ 
+*wp-config.php
+
+# --- Allow globaly
+ 
+!*.gitignore
+!*.gitkeep
+ 
+# --- Ignore OS generated files
+ 
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+ 
+# --- Ignore Vim generated files
+*.swp
+/w3tc-config/

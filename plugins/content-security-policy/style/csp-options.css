@@ -1,0 +1,16 @@
+#suggestion, #analyze, #csp_discard, #csp_verify_text, #csp_advanced { display: none }
+img.csp-trusted { vertical-align:middle; margin: 0 1em }
+#content-loading { visibility:hidden; vertical-align:middle; margin:0 .5em }
+#csp_value { width: 75%; margin: 1em }
+#csp_post_list, #csp_blog_url { visibility: hidden }
+#csp_msg {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  background-color: #8a836d;
+  border: 1px solid black;
+  padding: .5em 2em;
+  color: #fff;
+  margin: 0 0 .25em 0;
+  display: none;
+}
