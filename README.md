@@ -6,6 +6,9 @@ This is the theme and plugin directory for The East Wing. I don't know how helpf
 1. Move the themes and plugins folder into into wp-content/
 2. Enable the theme from the admin panel
 
+## Other Notes
+Logos and artwork are copyright. Please don't use. Layout and general theme are yours with or without attribution.
+
 ## The MIT License (MIT)
 
 The MIT License (MIT)
