@@ -28,6 +28,8 @@
         </tbody>
       </table>
 
+      <p><small>The memberships are recurring. However, you can cancel at anytime <a href="https://anythingoes.memberful.com/auth/sign_in">here</a>.</small></p>
+
     </div><!-- .seven -->
   </div><!-- .grid_max -->
 
