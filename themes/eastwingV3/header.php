@@ -46,6 +46,7 @@
   <a href="/about">About</a>
   <a href="/get-in-touch">Get In Touch</a>
   <a href="/sponsorship">Sponsorship</a>
+  <a href="/membership">Membership</a>
   <a href="http://itunes.apple.com/us/podcast/the-east-wing/id503801143" target="_blank" class="itunes">Subscribe on iTunes</a>
   <a href="http://theeastwing.net/feed/podcast" target="_blank" class="rss">Subscribe via RSS</a>
 </nav>
