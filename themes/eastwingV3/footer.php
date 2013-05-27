@@ -4,12 +4,8 @@
     <p><a href="https://twitter.com/the_eastwing" class="twitter-follow-button" data-show-count="false">Follow @the_eastwing</a>
       <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></p>
     <p><a href="http://itunes.apple.com/us/podcast/the-east-wing/id503801143" target="_blank">Subscribe on iTunes</a> &middot; <a href="http://theeastwing.net/feed/podcast/" target="_blank">Subscribe via RSS</a></p>
-    <p>&copy; <?php echo date('Y')?> Anythin&rsquo; Goes, LLC. Hosted by <a href="http://www.mediatemple.net/#a_aid=4f42c6d7d53a5">Media Temple</a></p>
+    <p>&copy; <?php echo date('Y')?> <a href="http://anythingo.es" target="_blank">Anythin&rsquo; Goes, LLC</a>. Hosted by <a href="http://www.mediatemple.net/#a_aid=4f42c6d7d53a5">Media Temple</a></p>
   </div> <!-- end .seven .left -->
-
-    <div class="one right">
-      <a href="http://anythingo.es" target="_blank" class="atom"><img src="<?php bloginfo('template_url'); ?>/img/ew_AnythinGoesLogo.svg" /></a>
-    </div>
 
   </div> <!-- end .contain -->
 </footer>

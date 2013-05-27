@@ -33,7 +33,7 @@
 			<h1 class="logo"><a href="/">The East Wing</a></h1>
 
 			<div class="description">
-			<p>The East Wing is a weekly show that talks about design, user experience, problem solving and the keys to creating products with value. Hosted by <a href="http://timothybsmith.com" target="_blank">Tim Smith</a>.</p>
+			<p>The East Wing is a weekly show that talks about design, user experience, problem solving and the keys to creating products with value. Hosted by <a href="http://ttimsmith.com" target="_blank">Tim Smith</a>.</p>
 			</div> <!-- end .description -->
 			</div> <!-- end .twelve -->
 	</div><!-- end .contain -->
@@ -44,15 +44,15 @@
 <div class="twelve">
 <nav>
   <a href="/about">About</a>
-  <a href="/get-in-touch">Get In Touch</a>
-  <a href="/sponsorship">Sponsorship</a>
   <a href="/membership">Membership</a>
+  <a href="/get-in-touch">Contact</a>
+  <a href="/sponsorship">Sponsorship</a>
   <a href="http://itunes.apple.com/us/podcast/the-east-wing/id503801143" target="_blank" class="itunes">Subscribe on iTunes</a>
   <a href="http://theeastwing.net/feed/podcast" target="_blank" class="rss">Subscribe via RSS</a>
 </nav>
 
 <div class="search">
-      <?php get_search_form(); ?>
+  <?php get_search_form(); ?>
 </div><!-- .search -->
 
 </div> <!-- end .twelve -->

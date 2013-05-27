@@ -65,15 +65,8 @@ if(isset($_POST['submitted'])) {
 		  
 		    <h2>Want to sponsor the show? Sweet!</h2>
 		  
-		    <p>We're honored that you'd want to sponsor the show! Thanks! We're looking for sponsors whose products or services will really benefit our listeners. For that reason, we really make an effort to hand pick who advertises on our site. We only accept sponsors who's products we use, have used or will use. If you'd like to help the show, you can <a href="https://spb.io/JCDurwa7NU" target="_blank">make a donation</a>. We appreciate your support!</p>
-		    <h3>Options, Options</h3>
-		    <p>You can choose between single episode sponsorship or a month long sponsorship. If there's some other type of arrangement you'd like to make, let us know. We might be able to make it happen!</p>
-		    <h3>What Do You Get?</h3>
-		    <ul>
-			    <li>Ad in the episode page sidebar with an up to 60 character description</li>
-	  		    <li>30-60 second spot at the top of the show</li>
-	  		    <li>Mention of your company/product when we tweet about the episode</li>
-			</ul>
+		    <p>We're honored that you'd want to sponsor the show! Thanks! We're looking for sponsors whose products or services will really benefit our listeners. For that reason, we really make an effort to hand pick who advertises on our site. We only accept sponsors who's products we use, have used or will use.</p>
+		    <p>If you don't have a product to advertise, but are interested in supporting the show, consider <a href="/membership">becoming a member</a>. We appreciate your support!</p>
 		    
 		    <p>Fill out the form below with your name, email and a brief decription of what you want to advertise and we'll get back to you as soon as possible!</p>
 		    
