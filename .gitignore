@@ -37,6 +37,7 @@
 # --- Ignore globally
  
 *wp-config.php
+*.scssc
 
 # --- Allow globaly
  
@@ -87,3 +88,33 @@ Thumbs.db
 /themes/eastwingV3/.sass-cache/482c28c6fb9cfab670e4a5486cd2f71077de81e1/_hacks.scssc
 /themes/eastwingV3/.sass-cache/63ab9043d55c608e175a0e030217b7fd519982e7/_css3.scssc
 /themes/eastwingV3/.sass-cache/63ab9043d55c608e175a0e030217b7fd519982e7/_support.scssc
+/themes/theeastwingv4/.sass-cache/0556a5a3e48647274272d108040f123ce7b14ebe/_colors.scssc
+/themes/theeastwingv4/.sass-cache/0556a5a3e48647274272d108040f123ce7b14ebe/_grid.scssc
+/themes/theeastwingv4/.sass-cache/0556a5a3e48647274272d108040f123ce7b14ebe/_mediaelement.scssc
+/themes/theeastwingv4/.sass-cache/0556a5a3e48647274272d108040f123ce7b14ebe/_pagenavi.scssc
+/themes/theeastwingv4/.sass-cache/0556a5a3e48647274272d108040f123ce7b14ebe/_reset.scssc
+/themes/theeastwingv4/.sass-cache/0556a5a3e48647274272d108040f123ce7b14ebe/_type.scssc
+/themes/theeastwingv4/.sass-cache/0556a5a3e48647274272d108040f123ce7b14ebe/global.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_appearance.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_background-clip.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_background-origin.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_background-size.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_border-radius.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_box-shadow.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_box-sizing.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_box.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_columns.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_filter.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_font-face.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_hyphenation.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_images.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_inline-block.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_opacity.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_regions.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_shared.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_text-shadow.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_transform.scssc
+/themes/theeastwingv4/.sass-cache/100b527c542b6ad76c032f7dc32d1f5e9c74941b/_transition.scssc
+/themes/theeastwingv4/.sass-cache/482c28c6fb9cfab670e4a5486cd2f71077de81e1/_hacks.scssc
+/themes/theeastwingv4/.sass-cache/63ab9043d55c608e175a0e030217b7fd519982e7/_css3.scssc
+/themes/theeastwingv4/.sass-cache/63ab9043d55c608e175a0e030217b7fd519982e7/_support.scssc

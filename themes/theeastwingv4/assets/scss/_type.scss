@@ -1,0 +1,49 @@
+@import "colors";
+
+@mixin sans {
+  font-family: "ff-dagny-web-pro",sans-serif;
+}
+
+h1 {
+  font-size: 52px;
+  line-height: 1;
+}
+
+h1.tax-head {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  padding: 40px 0;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+a {
+  color: $linkColor;
+  -webkit-transition: color .3s ease-in-out;
+  -moz-transition: color .3s ease-in-out;
+  transition: color .3s ease-in-out;
+}
+
+a:hover {
+  color: $darkGray;
+}
+
+p {
+  color: #333;
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: 25px;
+}
+
+em {
+  font-style: italic;
+}
