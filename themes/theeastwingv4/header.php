@@ -10,10 +10,10 @@
   <link rel="shortcut icon" href="<?php bloginfo('template_url'); ?>/favicon.ico">
 	  
   <!-- Responsify -->
-  <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/global.css"/> 
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/assets/css/global.css"/> 
 
 	<!-- Responsify -->
-	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/css/responsify.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo('template_url'); ?>/assets/css/responsify.css"/>
 
   <!-- Typekit Code -->
   <script type="text/javascript" src="//use.typekit.net/ohk1cik.js"></script>

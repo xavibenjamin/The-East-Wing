@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header('home'); ?>
 
 <div class="contain content-header">
   <div class="five left">
