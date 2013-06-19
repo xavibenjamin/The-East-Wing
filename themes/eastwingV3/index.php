@@ -18,8 +18,10 @@
 </div>
 
 <div class="grid_max">
-    <?php if (have_posts()) : ?>
-      <?php while (have_posts()) : the_post(); ?>
+    <?php if ( is_home() ) {
+      query_posts($query_string . '&cat=-109, -111');
+    } ?>
+   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
 <div class="three left entry">
     <a href="<?php the_permalink() ?>" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_post_thumbnail( 'cover-art' ); ?><h2><?php the_title(); ?></h2></a>
@@ -28,8 +30,7 @@
 
 </div> <!-- end .entry -->
     
-<?php endwhile; ?>
-<?php endif; ?>
+<?php endwhile; endif; ?>
 
 <div class="twelve">
       <?php wp_pagenavi(); ?>
