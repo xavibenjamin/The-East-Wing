@@ -82,8 +82,9 @@
 
 .live-audio {
   margin: 0 0 2em;
+  .mejs-time-rail, .mejs-duration-container {
+    display: none !important;
+  }
 }
 
-.mejs-time-rail, .mejs-duration-container {
-  display: none !important;
-}
+

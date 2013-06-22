@@ -1,11 +1,11 @@
 
 === Better WP Security ===
-Contributors: Bit51
+Contributors: Bit51, ChrisWiegman
 Donate link: http://bit51.com/software/better-wp-security/
-Tags: security, secure, multi-site, network, mu, login, lockdown, htaccess, hack, header, cleanup, ban, restrict, access, protect, protection, disable, images, image, hotlink, admin, username, database, prefix, wp-content, rename, directory, directories, secure, SSL
-Requires at least: 3.4
-Tested up to: 3.5.1
-Stable tag: 3.4.9
+Tags: security, secure, multi-site, network, mu, login, lockdown, htaccess, hack, header, cleanup, ban, restrict, access, protect, protection, disable, images, image, hotlink, admin, username, database, prefix, wp-content, rename, directory, directories, secure, SSL, FooPlugins
+Requires at least: 3.5
+Tested up to: 3.6
+Stable tag: 3.5.3
 
 The easiest, most effective way to secure WordPress. Improve the security of any WordPress site in seconds.
 
@@ -19,6 +19,10 @@ Released under the terms of the GNU General Public License.
 Better WP Security takes the best Wordpress security features and techniques and combines them in a single plugin thereby ensuring that as many security holes as possible are patched without having to worry about conflicting features or the possibility of missing anything on your site.
 
 With one-click activation for most features as well as advanced features for experienced users Better WP Security can help protect any site.
+
+= Professional Installation and Support Now Available =
+
+Need help or want to make sure your setup is as secure as possible? Professional support is now available! <a href="http://fooplugins.com/plugins/better-wp-security/">Purchase support or installation today through our partner FooPlugins</a>
 
 = Obscure =
 
@@ -80,18 +84,23 @@ Finally, should the worst happen Better WP Security will make regular backups of
 * French by <a href="http://www.sceric.net/">SCUDELLER Eric</a>
 * Hindi by <a href="http://outshinesolutions.com/">Outshine Solutions</a>
 * Lithuanian by <a href="http://www.host1free.com/">Vincent G</a>
+* Persian by <a href="http://www.gonak.ir/">Ibrahim Jafari</a>
 * Russian
+* Simplified Chinese by <a href="http://haib.in">海滨</a>
 * Slovak by <a href="http://www.nawebik.sk">Erich Szabó</a>
 * Spanish by <a href="http://pabloromero.org">Pablo Romero</a>
 * Tagalog by <a href="http://pointen.dk/">Hanne</a>
+* Turkish by <a href="http://hakanertr.wordpress.com">Hakan Er</a>
 
-Note I have removed all translations that were not compatible with version 3+. Please let me know if you would like to add a translation.
+Please <A href="http://bit51.com/contact" target="_blank">let us know</a> if you would like to contribute a translation.
 
 = Warning =
 
 Please read the installation instructions and FAQ before installing this plugin. It makes some significant changes to your database and other site files which, without a proper backup, can cause problems if something goes wrong. While problems are rare, most (not all) support requests I get for this plugin involve the users failure to make a proper backup before installing.
 
 == Installation ==
+
+Don't want to configure Better WP Security yourself but still want to make sure your site is secure as possible? <a href="http://fooplugins.com/plugins/better-wp-security/" target="_blank">Purchase premium installation and configuration for Better WP Security</a>
 
 1. Backup your Wordpress database, config file, and .htaccess file
 2. Upload the zip file to the `/wp-content/plugins/` directory
@@ -127,7 +136,7 @@ NOTE: It is possible that something will break due to the complexity of the chan
 * Yes.
 
 = Can I help? =
-* Of course! I am in constant need of testers and I would be more than happy to add the right contributor. In addition, I could always use help with translations for internationalization.
+* Of course! I am in constant need of testers and I would be more than happy to add the right contributor. In addition, I could always use help with translations for internationalization. <a href="http://bit51.com/contributing-to-better-wp-security/">For more information on contributing to Better WP Security visit Bit51</a>.
 
 = Will this break my site? =
 * It is possible that something will break. That said, under no circumstances do I release this plugin with any warranty, implied or otherwise, and at no time will I take any responsibility for any damage that might arise from the use of this plugin. REMEMBER TO ALWAYS BACKUP BEFORE TRYING NEW SOFTWARE!
@@ -141,7 +150,7 @@ NOTE: It is possible that something will break due to the complexity of the chan
 * define('FORCE_SSL_ADMIN', true);
 
 = Where can I get help if something goes wrong? =
-* As I do not have a support staff and this plugin is one of many projects I am involved with I do not guarantee support at all. There is no warranty and if something goes wrong I make no promise of assistance. That said, I do my best to check the WordPress.org support forums every 2 -3 days and  respond to all queries. I will not answer any support requests sent to me through any other method.
+* Free support is available by reading the <a href="http://bit51.com/software/better-wp-security/" target="_blank">plugin documentation</a> or may be available with the help of the community in the <a href="http://wordpress.org/support/plugin/better-wp-security" target="_blank">WordPress.org support forums</a> (this is community provided support as Bit51 does not monitor the WordPress.org support forums). If you need more formal support you can <a href="http://fooplugins.com/plugins/better-wp-security/" target="_blank">purchase a premium support ticket</a> on a per-incident basis.
 
 == Screenshots ==
 
@@ -151,6 +160,36 @@ NOTE: It is possible that something will break due to the complexity of the chan
 4. If you do get stuck help is never more than a few clicks away.
 
 == Changelog ==
+
+= 3.5.3 =
+* Simplified Chinese by <a href="http://haib.in">海滨</a>
+* Persian by <a href="http://forum.wp-parsi.com/user/1469-ibrahim/">Ibrahim Jafari</a>
+* Typo correction by ihuston
+* Fixed Bit51 Google+ Link
+* Better proxy support for ban users by kalvindukes
+* Updated Spanish translation by <a href="http://pabloromero.org">Pablo Romero</a>
+* Updated Readme
+* Updated .pot file
+
+= 3.5.2 =
+* Fixed error message that could appear when creating backups
+* Correct Changelog not displaying correctly on WordPress.org after version 3.5.1
+
+= 3.5.1 =
+* Replaced Turkish language version lost in when tagging 3.5 in the WordPress.org repository
+* Solved a conflict with other Bit51 plugins that use the common Bit51 class
+
+= 3.5 =
+* Integrate with Foo Plugins support system
+* Fixed role translation call for Strong password enforcement
+* Turkish by <a href="http://hakanertr.wordpress.com">Hakan Er</a>
+* Random version number no longer strips unrelated GET variables for better compatibility
+* Upgrading no longer automatically rewrites .htaccess and wp-config resulting in much improved reliability
+* Fixed possible error when login fails and PHP is set to report errors to screen
+
+= 3.4.10 =
+* Replaced feed with standard WordPress feed
+* Added better error checking for feed should Feedburner (or any other provider) kill it again
 
 = 3.4.9 =
 * More secure user query thanks to John Cave
