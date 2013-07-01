@@ -21,7 +21,7 @@
       <?php else : ?>
       <h2>Previously Recorded</h2>
     
-      <p>This show broadcasts live Tuesdays at 2pm US Central time.</p>
+      <p>This show broadcasts live Tuesdays at 2pm US Central time. You can subscribe to the Live Broadcast calendar <a href="/schedule">here</a>.</p>
 
     <?php endif; ?>
 
