@@ -1,0 +1,63 @@
+footer {
+  p:last-child {
+    margin: 0;
+  }
+}
+
+
+// About the Host
+.about-the-host {
+  background: darken($borderColor, 5%);
+  padding: $padding 0;
+  img {
+    border-radius: 200px;
+    margin: 0 3.125% 0 0;
+    width: 20.8333333%; height: auto;
+    float: left;
+  }
+  h2 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 0 0 4%;
+  }
+  h3 {
+    font-size: 1.2em;
+    margin: 0 0 1.5%;
+  }
+  p {
+    color: lighten($bodyColor, 20%);
+    font-size: 1.1em;
+    line-height: 160%;
+    a {
+      color: lighten($bodyColor, 20%);
+    }
+  }
+}
+
+// Helpful Links
+
+.helpful-links {
+  background: lighten($borderColor, 5%);
+  padding: 3% 0;
+  p {
+    margin: 0 0 1.5%;
+    font-size: .8em;
+    line-height: 150%;
+  }
+}
+
+.copyright {
+  background: $darkPurple;
+  color: white;
+  padding: 2% 0;
+  small {
+    font-size: .8em;
+  }
+  a {
+    color: white;
+    border-bottom: none;
+    &:hover {
+      color: rgba(white, .8);
+    }
+  }
+}

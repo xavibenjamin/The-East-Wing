@@ -18,6 +18,10 @@ p {
   margin: 0 0 3.125%;
 }
 
+em {
+  font-style: italic;
+}
+
 [data-icon]:before {
   content: attr(data-icon);
   @include iconfont;
