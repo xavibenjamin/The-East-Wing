@@ -67,7 +67,7 @@
       <a href="/" class="logo">The East Wing</a>
 
       <div class="description">
-        <p>The East Wing is a weekly show that talks about design, user experience, problem solving and the keys to creating products with value. Hosted by <a href="http://ttimsmith.com" target="_blank">Tim Smith</a>.</p>
+        <p>The East Wing is a weekly show that talks about design, user experience, problem solving and the keys to creating products with value.</p>
       </div> <!-- end .description -->
     </div> <!-- end .contain -->
   </section><!-- end .statement -->

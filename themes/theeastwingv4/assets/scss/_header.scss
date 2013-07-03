@@ -1,0 +1,102 @@
+// Header Styles
+
+.nav-bar {
+  background: $darkPurple;
+  padding: 1% 0;
+  font-size: .85em;
+  a {
+    color: lighten($darkPurple, 40%);
+    margin: 0 02.0833333% 0 0;
+    &:hover {
+      color: lighten($darkPurple, 55%);
+    }
+  }
+}
+
+.header-nav {
+  float: left;
+  white-space: nowrap;
+  margin: 00.8333333% 0 0;
+}
+
+.subscribe-search {
+  float: right;
+  overflow: hidden;
+  width: 39.5833333%;
+}
+
+.subscribe {
+  color: white;
+  float: left;
+  margin: 01.8421053% 4% 0 0;
+  white-space: nowrap;
+  li {
+    display: inline-block;
+    padding: 0 02.0833333% 0 0;
+    &:first-child {
+      font-weight: bold;
+    }
+  }
+}
+
+.search-form {
+  float: left;
+  #s {
+    background: lighten($darkPurple, 10%);
+    border-radius: 3px 0 0 3px;
+    padding: 5px 10px;
+    height: 31px;
+    float: left;
+    @include transition(background .2s ease-in-out);
+    &:focus {
+      background: white;
+    }
+  }
+  #searchsubmit {
+    background: lighten($darkPurple, 15%);
+    border-radius: 0 3px 3px 0;
+    float: left;
+    padding: 5px 10px;
+    height: 31px;
+    color: white;
+    @include transition(background .2s ease-in-out);
+    &:hover {
+      background: $linkColor;
+    }
+  }
+}
+
+
+.statement {
+  background: $primaryOrange;
+  padding: 2% 0 0;
+  overflow: hidden;
+  max-height: 350px;
+}
+
+.logo {
+  background: url(../img/logotype.svg) no-repeat;
+  display: block;
+  margin: 0 03.125% 0 0;
+  width: 300px; height: 283px;
+  text-indent: -9999px;
+  float: left;
+}
+
+.description {
+  float: left;
+  width: 65.625%;
+  margin: 4% 0 0;
+  p {
+    color: white;
+    font-size: 1.5em;
+    font-weight: 200;
+  }
+  a {
+    color: darken(#d26000, 10%);
+    &:hover {
+      color: darken(#d26000, 20%);
+    }
+  }
+
+}

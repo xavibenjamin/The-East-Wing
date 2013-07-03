@@ -1,21 +1,49 @@
 <?php get_header('home'); ?>
 
-<div class="contain content-header">
-  <div class="five left">
-    <div class="guest-info">
-      <h2>Next on The East Wing</h2>
-      <img src="<?php the_field('guest_image', 'options'); ?>" alt="<?php the_field('guest_name', 'options'); ?>"/>
-      <h3><a href="<?php the_field('guest_url', 'options'); ?>"><?php the_field('guest_name', 'options'); ?></a></h3>
-      <p>Airing the week of: <span><?php $date = DateTime::createFromFormat('Ymd', get_field('air_date', 'options')); echo $date->format('F jS, Y'); ?></span></p>
 
-    </div><!-- end .guest-info -->
-  </div><!-- end .twelve -->
+<section class="guest-sponsor-bar">
+  <div class="contain">
 
-  <!-- Insert Ad Code here -->
-  <div class="five right adspot">
-      <?php get_sidebar(); ?>
-  </div>
-</div>
+    <?php 
+      $the_query = new WP_Query(array(
+        'post_type' => 'upcoming-guests',
+        'showposts' => '1'   
+      )); 
+      ?>
+
+      <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+
+        <div class="guest-info">
+          <h2>Next on The East Wing</h2>
+          <?php the_post_thumbnail(); ?>
+          <h3><a href="<?php the_field('guest_url'); ?>"><?php the_title(); ?></a></h3>
+          <p>Airing the week of: <span><?php $date = DateTime::createFromFormat('Ymd', get_field('air_date')); echo $date->format('F jS, Y'); ?></span></p>
+        </div>
+      
+      <?php wp_reset_postdata(); endwhile; ?>
+
+      
+      <?php 
+      $the_query = new WP_Query(array(
+        'post_type' => 'sponsors',
+        'showposts' => '1'   
+      )); 
+      ?>
+
+      <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+
+      <div class="adspot">
+        <h2>Sponsored By</h2>
+        <?php the_post_thumbnail(); ?>
+        <h3><a href="<?php the_field('ad_url'); ?>"><?php the_title(); ?></a></h3>
+        <p><?php the_content(); ?></p>
+      </div>
+      
+      <?php wp_reset_postdata(); endwhile; ?>
+
+
+  </div><!-- end .contain -->
+</section>
 
 <div class="grid_max">
     <?php if (have_posts()) : ?>
