@@ -5,8 +5,12 @@
   padding: 1% 0;
   font-size: .85em;
   a {
+    border-bottom: none;
     color: lighten($darkPurple, 40%);
-    margin: 0 02.0833333% 0 0;
+    margin: 0 4.5% 0 0;
+    &:last-child {
+      margin: 0;
+    }
     &:hover {
       color: lighten($darkPurple, 55%);
     }
@@ -69,7 +73,7 @@
 
 .statement {
   background: $primaryOrange;
-  padding: 2% 0 0;
+  padding: $padding 0 0;
   overflow: hidden;
   max-height: 350px;
 }
@@ -99,4 +103,45 @@
     }
   }
 
+}
+
+.guest-sponsor-bar {
+  background: #eee;
+  padding: $padding 0;
+  h2 {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin: 0 0 4%;
+  }
+  img {
+    float: left;
+    margin: 0 3.5% 0 0;
+  }
+  h3 {
+    font-size: 1.1em;
+    margin: 0 0 3.125%;
+  }
+  p {
+    font-size: .9em;
+    color: lighten($bodyColor, 25%);
+  }
+}
+
+.guest-info {
+  float: left;
+  width: 50%;
+  img {
+    height: 60px; width: 60px;
+  }
+  span {
+    color: $bodyColor;
+    font-weight: bold;
+  }
+}
+
+.adspot {
+  @extend .guest-info;
+  img {
+    height: 100px; width: 150px;
+  }
 }

@@ -1,8 +1,9 @@
 @import "reset";
-@import "colors";
+@import "bits";
 @import "type";
-@import "pagenavi";
 @import "compass/css3";
+@import "pagenavi";
+
 
 // Reusable Styles
 
@@ -20,8 +21,17 @@
 
 // Global Styles
 
+body {
+  color: $bodyColor;
+}
+
 a {
+  color: $bodyColor;
+  border-bottom: 1px solid $borderColor;
   @include transition(all .2s ease-in-out);
+  &:hover {
+    border-bottom-color: $primaryOrange;
+  }
 }
 
 
