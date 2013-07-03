@@ -13,13 +13,16 @@ body {
 }
 
 p {
+  font-size: 1.2em;
   line-height: 140%;
+  margin: 0 0 3.125%;
 }
 
 [data-icon]:before {
   content: attr(data-icon);
   @include iconfont;
   speak: none;
+  vertical-align: middle;
 }
 
 @font-face {

@@ -1,0 +1,42 @@
+.entry {
+  border-bottom: 1px solid $borderColor;
+  padding: $padding 0;
+  clear: left;
+  overflow: hidden;
+  &:last-child {
+    border-bottom: none;
+  }
+  img {
+    float: left;
+    width: 27.6041667%; height: auto;
+    margin: 0 03.125% 0 0;
+  }
+  h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 0 .8%;
+    a {
+      border-bottom: none;
+      &:hover {
+        color: $primaryOrange;
+      }
+    }
+  }
+  p.pubdate {
+    margin: 0 0 2%;
+    font-size: .9em;
+  }
+  p {
+    line-height: 160%;
+  }
+}
+
+.text {
+  width: 69.2708333%;
+  float: left;
+}
+
+.icon {
+  color: lighten($bodyColor, 50%);
+  margin: 0 1% 0 0;
+}
