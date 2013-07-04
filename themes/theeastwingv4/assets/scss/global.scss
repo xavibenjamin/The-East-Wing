@@ -24,6 +24,14 @@
   color: darken($borderColor, 15%);
 }
 
+.page-title {
+  border-bottom: 3px solid $borderColor;
+  font-size: 2.3em;
+  font-weight: 900;
+  padding: 0 0 2%;
+  margin: 0 0 2%;
+}
+
 // Global Styles
 
 body {
