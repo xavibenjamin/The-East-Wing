@@ -136,6 +136,17 @@ function create_post_type() {
   );
 }
 
+// The East Wing Episodes : Off Air Episodes - Post to Posts
+
+function my_connection_types() {
+  p2p_register_connection_type( array(
+    'name' => 'EastWing_to_OffAir',
+    'from' => 'post',
+    'to' => 'offairs'
+  ) );
+}
+add_action( 'p2p_init', 'my_connection_types' );
+
 
 
 ?>
