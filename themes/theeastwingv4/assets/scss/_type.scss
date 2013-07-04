@@ -12,11 +12,42 @@ body {
   @include sans;
 }
 
+
+h3 {
+  color: lighten($bodyColor, 25%);
+  font-size: 1.35em;
+  font-weight: bold;
+  margin: 6% 0 3.125%;
+}
+
+h4 {
+  color: lighten($bodyColor, 45%);
+  font-size: .9em;
+  font-weight: bold;
+  margin: 0 0 3.125%;
+  text-transform: uppercase;
+}
+
 p {
   font-size: 1.2em;
   line-height: 140%;
   margin: 0 0 3.125%;
 }
+
+ul {
+  list-style-type: square;
+  li {
+    margin: 02.0833333% 0;
+    a {
+      color: $primaryOrange;
+      border-bottom: none;
+      &:hover {
+        color: darken($primaryOrange, 5%);
+      }
+    }
+  }
+}
+
 
 em {
   font-style: italic;
@@ -26,7 +57,7 @@ em {
   content: attr(data-icon);
   @include iconfont;
   speak: none;
-  vertical-align: middle;
+  vertical-align: top;
 }
 
 @font-face {

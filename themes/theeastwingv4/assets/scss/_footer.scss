@@ -7,7 +7,7 @@ footer {
 
 // About the Host
 .about-the-host {
-  background: darken($borderColor, 5%);
+  background: lighten($borderColor, 5%);
   padding: $padding 0;
   img {
     border-radius: 200px;
@@ -22,6 +22,7 @@ footer {
   }
   h3 {
     font-size: 1.2em;
+    font-weight: normal;
     margin: 0 0 1.5%;
   }
   p {
@@ -37,7 +38,7 @@ footer {
 // Helpful Links
 
 .helpful-links {
-  background: lighten($borderColor, 5%);
+  background: darken($borderColor, 3%);
   padding: 3% 0;
   p {
     margin: 0 0 1.5%;

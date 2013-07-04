@@ -6,11 +6,12 @@
       <article class="entry">
         <?php the_post_thumbnail( 'cover-art' ); ?>
         <div class="text">
-          <h2><a href="<?php the_permalink(); ?>" title="Permanent Link to <?php the_title(); ?>"><?php the_title();?></a></h2>
           <p class="pubdate">
             <span class="screen-reader-text">Calendar Icon</span>
             <span class="icon" data-icon="c"></span>
-            <time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('F jS, Y');?></time></p>
+            <time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('F jS, Y');?></time>
+          </p>
+          <h2><a href="<?php the_permalink(); ?>" title="Permanent Link to <?php the_title(); ?>">#<?php the_field('episode_number'); ?>: <?php the_title();?></a></h2>
           <?php the_excerpt(); ?>
         </div><!-- .text -->
 

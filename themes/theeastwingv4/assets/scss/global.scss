@@ -1,6 +1,7 @@
 @import "reset";
 @import "bits";
 @import "type";
+@import "mediaelement";
 @import "compass/css3";
 @import "pagenavi";
 
@@ -17,6 +18,10 @@
   position: absolute;
   top: -9999px;
   left: -9999px;
+}
+
+.inactive {
+  color: darken($borderColor, 15%);
 }
 
 // Global Styles

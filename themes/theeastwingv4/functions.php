@@ -51,11 +51,11 @@ add_theme_support ('post-thumbnails');
 add_image_size('cover-art', 265, 9999);
 
 // Media Element Js
-wp_register_script( 'mediaelement-js', get_template_directory_uri() . '/js/mediaelement-and-player.min.js');
+wp_register_script( 'mediaelement-js', get_template_directory_uri() . '/assets/js/mediaelement-and-player.min.js');
 wp_enqueue_script( 'mediaelement-js', 'true', 'true', 'true', 'true');
 
 //Time Jump
-wp_register_script( 'time-jump', get_template_directory_uri() . '/js/timeJump.js');
+wp_register_script( 'time-jump', get_template_directory_uri() . '/assets/js/timeJump.js');
 wp_enqueue_script( 'time-jump', 'true', 'true', 'true', 'true' );
 
 

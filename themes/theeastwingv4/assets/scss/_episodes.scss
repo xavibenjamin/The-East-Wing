@@ -3,6 +3,9 @@
   padding: $padding 0;
   clear: left;
   overflow: hidden;
+  &:first-child {
+    padding-top: 0;
+  }
   &:last-child {
     border-bottom: none;
   }
@@ -12,9 +15,17 @@
     margin: 0 03.125% 0 0;
   }
   h2 {
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 0 0 .8%;
+    font-size: 2em;
+    font-weight: 900;
+    margin: 0 0 2.5%;
+    small {
+      color: lighten($bodyColor, 40%);
+      display: block;
+      font-size: .5em;
+      font-weight: bold;
+      line-height: 180%;
+      text-transform: uppercase;
+    }
     a {
       border-bottom: none;
       &:hover {
@@ -23,8 +34,9 @@
     }
   }
   p.pubdate {
-    margin: 0 0 2%;
+    color: lighten($bodyColor, 30%);
     font-size: .9em;
+    margin: 0 0 5%;
   }
   p {
     line-height: 160%;
@@ -38,5 +50,60 @@
 
 .icon {
   color: lighten($bodyColor, 50%);
-  margin: 0 1% 0 0;
+  margin: 0 1.5% 0 0;
+  vertical-align: top;
+  &.facebook {
+    color: #3b5998;
+  }
+  &.twitter {
+    color: #00acee;
+  }
 }
+
+
+// Single Page Styles
+
+.podPress_content {
+  padding: 0 0 2% !important;
+  border-bottom: 1px solid $borderColor !important;
+  margin: 0 0 6% !important;
+}
+
+.podpress_mediafile_title {
+  display: none;
+}
+
+
+.meta-info {
+  background: #f8f8f8;
+  padding: $padding;
+  margin: 8% 0 0;
+}
+
+.sharing {
+  border-bottom: 1px solid $borderColor;
+  list-style-type: none;
+  padding: 0 0 3%;
+  margin: 0 0 3%;
+  li {
+    display: inline-block;
+    padding: 0 3% 0 0;
+    margin: 0;
+    white-space: nowrap;
+    &:last-child {
+      padding: 0;
+    }
+  }
+}
+
+.episode-navigation {
+  a {
+    border-bottom: none;
+    color: $primaryOrange;
+    &:hover {
+      color: darken($primaryOrange, 5%);
+    }
+  }
+}
+
+

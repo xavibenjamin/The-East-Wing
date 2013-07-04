@@ -6,7 +6,7 @@
   border-top: 1px solid $borderColor;
   overflow: hidden;
   text-align: center;
-  padding: $padding 0;
+  padding: 7% 0 0;
 }
 
 .wp-pagenavi a {
@@ -19,7 +19,7 @@
   color: white;
   @include border-radius (4px);
   &:hover {
-    background: darken($primaryOrange, 10%);
+    background: darken($primaryOrange, 5%);
     color: white;
   }
   &:active {

@@ -1,33 +1,67 @@
 <?php get_header() ?>
 
-<div class="grid_max">
-
-  <!-- Insert Ad Code here -->
-  <div class="four adspot right">
-      <?php get_sidebar(); ?>
-  </div>  
-
-
-<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+<section class="main-content" role="main">
+  <div class="contain">
+    
+    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       
-      <div class="seven left">
+      <article class="entry">
+        <?php the_post_thumbnail( 'cover-art' ); ?>
+        <div class="text">
+          <p class="pubdate">
+            <span class="screen-reader-text">Calendar Icon</span>
+            <span class="icon" data-icon="c"></span>
+            <time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('F jS, Y');?></time>
+          </p>
+          <h2><?php the_title();?> <small>Episode #<?php the_field('episode_number'); ?></small></h2>
+          <?php the_content(); ?>
 
-      <h2><?php the_title(); ?></h2>
-      <p class="date">Posted on <?php the_time('F j, Y');?></p>
-        
-      <?php the_content('Read More') ?>
+          <div class="meta-info">
+            
+            <h4>Share</h4>
+            <ul class="sharing">
+              <li>
+                <span class="screen-reader-text">Twitter Icon</span>
+                <span class="icon twitter" data-icon="t"></span>
+                <a href="http://twitter.com/home?status=The East Wing <?php the_field('episode_number');?> with @ttimsmith and <?php the_title(); ?> - <?php the_permalink(); ?>" title="Share on Twitter" target="_blank">Share on Twitter</a>
+              </li>
+              <li>
+                <span class="screen-reader-text">Facebook Icon</span>
+                <span class="icon facebook" data-icon="f"></span>
+                <a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&t=<?php the_title(); ?>" title="Share on Facebook" target="blank">Share on Facebook</a>
+
+              </li>
+            </ul>
+
+            <nav class="episode-navigation">
+              <?php previous_post_link('%link', 'Previous Episode', TRUE); ?>
+              <?php if(!get_adjacent_post(true, '', true)) { 
+                echo '<span class="inactive">Previous Episode</span>'; 
+              } ?>
+              &middot;
+              <?php next_post_link('%link', 'Next Episode', TRUE); ?>
+              <?php if(!get_adjacent_post(true, '', false)) { 
+                echo '<span class="inactive">Next Episode</span>'; 
+              } ?>
+            </nav>
+          </div>
+
+        </div><!-- .text -->
+      </article>
       
-      <ul class="meta_info">
-        <li><?php the_tags('#', ' #'); ?></li>
-        <li><a href="http://twitter.com/home?status=Currently listening to <?php the_permalink(); ?> /via @the_eastwing" title="Share on Twitter" target="_blank">Share on Twitter</a> &middot; <a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&t=<?php the_title(); ?>" title="Share on Facebook" target="blank">Share on Facebook</a></li>
-        <li><?php previous_post_link('%link', 'Previous'); ?> &middot; <?php next_post_link('%link', 'Next'); ?></li>
-      </ul>
+      
     </div> <!-- end .eight -->
 
 
-<?php endwhile; endif; ?>
+<?php endwhile; endif; ?>   
 
-</div> <!-- end .grid_max -->
+
+
+
+
+
+  </div><!-- .contain -->
+</section><!-- .main-content -->
 
 
 <?php get_footer() ?>

@@ -88,6 +88,15 @@
   float: left;
 }
 
+.logo-alt {
+  background: url(../img/logotype-alt.svg) no-repeat;
+  border-bottom: none;
+  display: block;
+  margin: 0 auto;
+  text-indent: -9999px;
+  width: 450px; height: 115px;
+}
+
 .description {
   float: left;
   width: 65.625%;
@@ -108,18 +117,15 @@
 
 .guest-sponsor-bar {
   background: #eee;
-  padding: $padding 0;
+  padding: 2.5% 0;
   h2 {
     font-size: 1.3em;
     font-weight: bold;
     margin: 0 0 4%;
   }
-  img {
-    float: left;
-    margin: 0 3.5% 0 0;
-  }
   h3 {
     font-size: 1.1em;
+    font-weight: normal;
     margin: 0 0 3.125%;
   }
   p {
@@ -131,8 +137,11 @@
 .guest-info {
   float: left;
   width: 50%;
+  text-align: right;
   img {
-    height: 60px; width: 60px;
+    float: right;
+    height: 80px; width: auto;
+    margin: 0 0 0 3.5%;
   }
   span {
     color: $bodyColor;
@@ -142,7 +151,10 @@
 
 .adspot {
   @extend .guest-info;
+  text-align: left;
   img {
+    float: left;
     height: 100px; width: 150px;
+    margin: 0 3.5% 0 0;
   }
 }
