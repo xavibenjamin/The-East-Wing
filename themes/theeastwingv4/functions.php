@@ -101,7 +101,7 @@ register_post_type('sponsors', array( 'label' => 'Site Wide Sponsors','descripti
 
 add_action( 'init', 'create_post_type');
 function create_post_type() {
-  register_post_type( 'offairs',
+  register_post_type( 'offair',
     array(
       'labels' => array(
         'name' => 'Off Air Episodes',
@@ -142,7 +142,7 @@ function my_connection_types() {
   p2p_register_connection_type( array(
     'name' => 'EastWing_to_OffAir',
     'from' => 'post',
-    'to' => 'offairs'
+    'to' => 'offair'
   ) );
 }
 add_action( 'p2p_init', 'my_connection_types' );

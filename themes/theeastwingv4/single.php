@@ -12,6 +12,20 @@
             <span class="screen-reader-text">Calendar Icon</span>
             <span class="icon" data-icon="c"></span>
             <time datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('F jS, Y');?></time>
+          
+          <?php
+            $connected = new WP_Query( array(
+              'connected_type' => 'EastWing_to_OffAir',
+              'connected_items' => get_queried_object(),
+              'nopaging' => true,
+              ));
+
+            if ($connected->have_posts() ) : $connected->the_post(); ?>
+
+            &middot; <a href="<?php the_permalink(); ?>">Listen to the Off Air</a>
+
+            <?php wp_reset_postdata(); endif; ?>
+            
           </p>
           <h2><?php the_title();?> <small>Episode #<?php the_field('episode_number'); ?></small></h2>
           <?php the_content(); ?>
