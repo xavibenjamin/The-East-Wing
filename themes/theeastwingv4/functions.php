@@ -97,5 +97,45 @@ register_post_type('sponsors', array( 'label' => 'Site Wide Sponsors','descripti
 ),) );
 
 
+// Off Air Post Type
+
+add_action( 'init', 'create_post_type');
+function create_post_type() {
+  register_post_type( 'offairs',
+    array(
+      'labels' => array(
+        'name' => 'Off Air Episodes',
+        'singular_name' => 'Off Air Episode',
+        'menu_name' => 'Off Air Episodes',
+        'add_new' => 'Add Off Air Episode',
+        'add_new_item' => 'Add New Off Air Episode',
+        'edit' => 'Edit',
+        'edit_item' => 'Edit Off Air Episode',
+        'new_item' => 'New Off Air Episode',
+        'view' => 'View Off Air Episode',
+        'view_item' => 'View Off Air Episode',
+        'search_items' => 'Search Off Air Episodes',
+        'not_found' => 'No Off Air Episodes Found',
+        'not_found_in_trash' => 'No Off Air Episodes Found in Trash',
+        'parent' => 'Parent Off Air Episode',
+      ),
+    'public' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'show_in_nav_menus' => true,
+    'show_in_admin_bar' => true,
+    'menu_position' => 5,
+    'capability_type' => 'post',
+    'hierarchical' => false,
+    'rewrite' => array('slug' => ''),
+    'query_var' => true,
+    'exclude_from_search' => false,
+    'has_archive' => false,
+    'supports' => array( 'title','editor','excerpt','custom-fields','thumbnail', 'revisions' ),
+    )
+  );
+}
+
+
 
 ?>
