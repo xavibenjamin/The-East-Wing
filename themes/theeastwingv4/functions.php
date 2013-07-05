@@ -132,6 +132,7 @@ function create_post_type() {
     'exclude_from_search' => false,
     'has_archive' => true,
     'supports' => array( 'title','editor','excerpt','custom-fields','thumbnail', 'revisions' ),
+    'taxonomies' => array( 'category' ),
     )
   );
 }
