@@ -4,7 +4,7 @@
   background: $darkPurple;
   padding: 1% 0;
   font-size: .85em;
-  @media screen and (max-width: 755px ) {
+  @media screen and (max-width: 756px ) {
     padding: 3% 0;
   }
   a {
@@ -47,7 +47,7 @@
     float: none;
     width: auto;
   }
-  @media screen and (max-width: 755px ) {
+  @media screen and (max-width: 756px ) {
     display: none;
   }
 }
@@ -132,7 +132,7 @@
 .alt-description {
   background: lighten($darkPurple, 10%);
   color: white;
-  padding: 2% 0;
+  padding: 2.5% 0;
   p {
     color: lighten($darkPurple, 70%);
     margin: 0;
