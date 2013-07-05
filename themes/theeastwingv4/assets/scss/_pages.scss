@@ -1,0 +1,32 @@
+
+// Membership Page
+
+.memberships {
+  width: 100%;
+  margin: 0 0 3.5%;
+  h4 {
+    margin: 0;
+    text-transform: none;
+  }
+}
+
+tr {
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 8px 8px 10px;
+}
+
+td {
+  padding: 8px;
+  line-height: 140%;
+}
+
+p {
+  small {
+    font-size: .7em;
+  }
+}

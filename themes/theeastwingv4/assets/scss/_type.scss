@@ -53,6 +53,10 @@ em {
   font-style: italic;
 }
 
+strong {
+  font-weight: bold;
+}
+
 [data-icon]:before {
   content: attr(data-icon);
   @include iconfont;

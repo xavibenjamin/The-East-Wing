@@ -41,8 +41,8 @@ function custom_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'custom_excerpt_more' );
 
-// Registering Option Page
-register_options_page('Site Options');
+// Registering Live Stream Options Page
+register_options_page('Live Stream Options');
 
 // Featured Images
 
@@ -147,6 +147,81 @@ function my_connection_types() {
 }
 add_action( 'p2p_init', 'my_connection_types' );
 
+
+
+// Registering Fields for Live Stream Options Page
+
+// Fields 
+add_action('acf/register_fields', 'my_register_fields');
+
+function my_register_fields()
+{
+  //include_once('add-ons/acf-repeater/repeater.php');
+  //include_once('add-ons/acf-gallery/gallery.php');
+  //include_once('add-ons/acf-flexible-content/flexible-content.php');
+}
+
+// Options Page 
+//include_once( 'add-ons/acf-options-page/acf-options-page.php' );
+
+
+/**
+ *  Register Field Groups
+ *
+ *  The register_field_group function accepts 1 array which holds the relevant data to register a field group
+ *  You may edit the array as you see fit. However, this may result in errors if the array is not compatible with ACF
+ */
+
+if(function_exists("register_field_group"))
+{
+  register_field_group(array (
+    'id' => 'acf_live-stream',
+    'title' => 'Live Stream',
+    'fields' => array (
+      array (
+        'key' => 'field_51c39f5e13b68',
+        'label' => 'Live Stream',
+        'name' => 'live_stream',
+        'type' => 'true_false',
+        'message' => 'Is The East Wing live?',
+        'default_value' => 0,
+      ),
+      array (
+        'key' => 'field_51c39fcb1a075',
+        'label' => 'Live Guest Name',
+        'name' => 'live_guest_name',
+        'type' => 'text',
+        'default_value' => '',
+        'formatting' => 'none',
+      ),
+      array (
+        'key' => 'field_51c3a1586353c',
+        'label' => 'Live Episode Number',
+        'name' => 'live_episode_number',
+        'type' => 'number',
+        'default_value' => '',
+      ),
+    ),
+    'location' => array (
+      'rules' => array (
+        array (
+          'param' => 'options_page',
+          'operator' => '==',
+          'value' => 'acf-options-live-stream-options',
+          'order_no' => 0,
+        ),
+      ),
+      'allorany' => 'all',
+    ),
+    'options' => array (
+      'position' => 'normal',
+      'layout' => 'default',
+      'hide_on_screen' => array (
+      ),
+    ),
+    'menu_order' => 0,
+  ));
+}
 
 
 ?>

@@ -26,6 +26,16 @@
 
 <body <?php body_class($class); ?>>
 
+  <?php if (get_field('live_stream', 'options')) : ?>
+    <div class="live-banner">
+      <div class="contain">
+        <div class="recording animated pulse"></div>
+        <p>ON AIR: The East Wing #<?php the_field('live_episode_number', 'options'); ?> with Tim Smith - <a href="/live">Listen</a> </p>
+      </div>
+    </div>
+
+  <?php endif; ?>
+
 
 
 
@@ -34,7 +44,7 @@
     <div class="contain">    
       <nav role="navigation" class="header-nav">
         <a href="/">Episodes</a>
-        <a href="/get-in-touch">Contact</a>
+        <a href="/contact">Contact</a>
         <a href="/sponsorship">Sponsorship</a>
         <a href="/membership">Membership</a>    
       </nav>

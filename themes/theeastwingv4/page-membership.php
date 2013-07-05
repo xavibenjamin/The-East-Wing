@@ -1,11 +1,14 @@
 <?php get_header() ?>
 
-  <div class="grid_max">
+  
+<section class="main-content" role="main">
+  <div class="contain">
+    
+  <?php the_post(); ?>
 
-    <?php the_post(); ?>
-
-    <div class="seven">
-      <h2><?php the_title(); ?></h2>
+      <h2 class="page-title">Become a Member</h2>
+      
+      <div class="text">
       <?php the_content(''); ?>
 
       <table class="memberships">
@@ -30,8 +33,11 @@
 
       <p><small>The memberships are recurring. However, you can cancel at anytime <a href="https://anythingoes.memberful.com/auth/sign_in">here</a>.</small></p>
 
-    </div><!-- .seven -->
-  </div><!-- .grid_max -->
+    </div><!-- .text -->
 
+
+
+  </div><!-- .contain -->
+</section>
 
 <?php get_footer() ?>
