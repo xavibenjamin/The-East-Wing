@@ -73,14 +73,16 @@
   <section class="statement">
     <div class="contain">
       <a href="/" class="logo">The East Wing</a>
-
-      <div class="description">
-        <p>The East Wing is a weekly show that talks about design, user experience, problem solving and the keys to creating products with value.</p>
-      </div> <!-- end .description -->
     </div> <!-- end .contain -->
   </section><!-- end .statement -->
   
 </header>
+
+<section class="alt-description">
+  <div class="contain">
+    <p>The East Wing is a weekly interview show featuring established and up-and-coming designers, developers, and entrepreneurs.</p>
+  </div>
+</section>
 
 <section class="guest-sponsor-bar">
   <div class="contain">
