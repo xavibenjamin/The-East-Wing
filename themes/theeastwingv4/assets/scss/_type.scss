@@ -10,6 +10,12 @@
 body {
   font-size: 110%;
   @include sans;
+  @media screen and (max-width: 700px ) {
+    font-size: 98%;
+  }
+  @media screen and (max-width: 500px ) {
+    font-size: 85%;
+  }
 }
 
 
@@ -38,6 +44,9 @@ ul {
   list-style-type: square;
   li {
     margin: 02.0833333% 0;
+    @media screen and (max-width: 500px ) {
+      line-height: 160%;
+    }
     a {
       color: $primaryOrange;
       border-bottom: none;

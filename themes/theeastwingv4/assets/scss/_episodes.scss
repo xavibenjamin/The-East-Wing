@@ -10,6 +10,7 @@
     border-bottom: none;
   }
   img {
+
     float: left;
     width: 27.6041667%; height: auto;
     margin: 0 03.125% 0 0;
@@ -18,6 +19,9 @@
     font-size: 2em;
     font-weight: 900;
     margin: 0 0 2.5%;
+    @media screen and (max-width: 500px ) {
+      font-size: 1.4em;
+    }
     small {
       color: lighten($bodyColor, 40%);
       display: block;
@@ -42,6 +46,38 @@
     line-height: 160%;
   }
 }
+
+@media screen and (max-width: 500px ) {
+  .home {
+    .entry {
+      img {
+        width: 18%;
+      }
+      .text {
+        width: 75%;
+      }
+      p {
+        &:nth-child(3) {
+          display: none;
+        }
+      }
+    } 
+  }
+  
+  .single, .page {
+    img {
+      display: none;
+    }
+    .text {
+      float: none;
+      width: 100%;
+    }
+  }
+
+
+}
+
+
 
 .text {
   width: 69.2708333%;
