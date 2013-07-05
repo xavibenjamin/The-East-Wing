@@ -37,7 +37,7 @@
               <li>
                 <span class="screen-reader-text">Twitter Icon</span>
                 <span class="icon twitter" data-icon="t"></span>
-                <a href="http://twitter.com/home?status=The East Wing <?php the_field('episode_number');?> with @ttimsmith and <?php the_title(); ?> - <?php the_permalink(); ?>" title="Share on Twitter" target="_blank">Share on Twitter</a>
+                <a href="http://twitter.com/home?status=Off Air <?php the_field('episode_number');?> with @ttimsmith and <?php the_title(); ?> - <?php the_permalink(); ?>" title="Share on Twitter" target="_blank">Share on Twitter</a>
               </li>
               <li>
                 <span class="screen-reader-text">Facebook Icon</span>
