@@ -43,10 +43,8 @@ p {
 ul {
   list-style-type: square;
   li {
-    margin: 02.0833333% 0;
-    @media screen and (max-width: 500px ) {
-      line-height: 160%;
-    }
+    margin: 1.2% 0;
+    line-height: 160%;
     a {
       color: $primaryOrange;
       border-bottom: none;
