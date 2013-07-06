@@ -110,6 +110,9 @@
     width: auto;
     margin: 0 10px 0 0;
   }
+  label {
+    font-size: .85em;
+  }
 }
 
 .gfield_date_day {
@@ -123,6 +126,15 @@
 
 .gfield_required, .validation_error, .validation_message {
   color: #e54a4f;
+}
+
+#gforms_confirmation_message {
+  border-top: 1px solid $borderColor;
+  padding: 5% 0 0;
+  margin: 5% 0 0;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 160%;
 }
 
 .validation_error {
