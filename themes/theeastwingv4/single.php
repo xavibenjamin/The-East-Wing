@@ -6,7 +6,7 @@
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
       
       <article class="entry">
-        <?php if (the_post_thumbnail( 'cover-art' )) : ?>
+        <?php if (has_post_thumbnail()) : ?>
             <?php the_post_thumbnail('cover-art'); ?>
         <?php else : ?>
           <img src="http://theeastwing.s3.amazonaws.com/wp-content/uploads/2012/12/eastwing_podcast_artwork_600-265x265.png" alt="The East Wing Podcast Artwork" />
