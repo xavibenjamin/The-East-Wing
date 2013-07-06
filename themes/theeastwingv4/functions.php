@@ -224,5 +224,25 @@ if(function_exists("register_field_group"))
   ));
 }
 
+// Messing with WP Admin Bar
 
-?>
+
+function mytheme_admin_bar_render() {
+    global $wp_admin_bar;
+    // we can remove a menu item, like the Comments link, just by knowing the right $id
+    $wp_admin_bar->remove_menu('comments');
+    $wp_admin_bar->remove_menu('wpseo-menu');
+    // or we can remove a submenu, like New Link.
+    $wp_admin_bar->remove_menu('new-link', 'new-content');
+    $wp_admin_bar->remove_menu('new-media', 'new-content');
+    $wp_admin_bar->remove_menu('new-user', 'new-content');
+    // we can add a submenu item too
+    $wp_admin_bar->add_menu( array(
+        'parent' => false,
+        'id' => 'live-stream-admin-menu',
+        'title' => __('Live Stream'),
+        'href' => admin_url( 'admin.php?page=acf-options-live-stream-options')
+    ) );
+}
+// and we hook our function via
+add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
