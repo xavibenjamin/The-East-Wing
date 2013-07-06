@@ -42,9 +42,6 @@
     font-size: .9em;
     margin: 0 0 5%;
   }
-  p {
-    line-height: 160%;
-  }
 }
 
 @media screen and (max-width: 500px ) {
@@ -82,6 +79,9 @@
 .text {
   width: 64.5833333%;
   float: left;
+  p {
+    line-height: 160%;
+  }
 }
 
 .icon {
