@@ -48,7 +48,7 @@ register_options_page('Live Stream Options');
 
 add_theme_support ('post-thumbnails');
 
-add_image_size('cover-art', 265, 9999);
+add_image_size('cover-art', 265, 265);
 
 // Media Element Js
 wp_register_script( 'mediaelement-js', get_template_directory_uri() . '/assets/js/mediaelement-and-player.min.js');
