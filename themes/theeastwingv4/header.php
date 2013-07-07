@@ -78,7 +78,7 @@
   
 </header>
 
-<section class="guest-sponsor-bar">
+<section class="guest-sponsor-bar with-background">
   <div class="contain">
       
       <?php 
