@@ -81,6 +81,7 @@
 <section class="alt-description">
   <div class="contain">
     <p>The East Wing is a weekly interview show featuring established and up-and-coming designers, developers, and entrepreneurs.</p>
+    <p><small>The East Wing broadcasts live. <a href="/schedule">See the schedule</a></small>.</p>
   </div>
 </section>
 

@@ -55,7 +55,7 @@
 .subscribe {
   color: white;
   float: left;
-  margin: 01.8421053% 4% 0 0;
+  margin: .5% 4% 0 0;
   white-space: nowrap;
   li {
     display: inline-block;
@@ -130,26 +130,28 @@
 }
 
 .alt-description {
-  background: lighten($darkPurple, 10%);
-  color: white;
+  background: #f0f0f0;
   padding: 2.5% 0;
   p {
-    color: lighten($darkPurple, 70%);
-    margin: 0;
-    font-size: 1.6em;
+    font-size: 1.65em;
     line-height: 155%;
     font-weight: 200;
+    &:last-child {
+      margin: 0;
+    }
     @media screen and (max-width: 500px ) {
       font-size: 1.3em;
     }
+  }
+  small {
+    font-weight: normal;
   }
 }
 
 
 
 .guest-sponsor-bar {
-  background: #eee;
-  padding: 2.5% 0;
+  margin: 3.5% 0;
   h2 {
     font-size: 1.3em;
     font-weight: bold;
@@ -170,6 +172,7 @@
   float: left;
   width: 45%;
   text-align: right;
+  overflow: hidden;
   @media screen and (max-width: 700px ) {
     float: none;
     width: 100%;
@@ -198,7 +201,7 @@
   width: 55%;
   text-align: left;
   @media screen and (max-width: 700px ) {
-    border-bottom: 1px solid darken($borderColor, 10%);
+    border-bottom: 1px solid $borderColor;
     padding: 4% 0;
     margin: 0 0 4%;
     width: 100%;
