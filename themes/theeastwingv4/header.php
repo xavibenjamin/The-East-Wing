@@ -1,5 +1,24 @@
 <!DOCTYPE html>
 <head>
+  
+  <!-- 
+
+  @@@@@@@@@@@@@@@@@  @@@   @@@          @@@ 
+  @@@@@@@@@@@@@@@@@  @@@   @@@@        @@@@
+         @@@         @@@   @@@ @      @ @@@
+         @@@         @@@   @@@  @@  @@  @@@
+         @@@         @@@   @@@   @@@    @@@
+         @@@         @@@   @@@          @@@
+         @@@         @@@   @@@          @@@
+         @@@         @@@   @@@          @@@
+
+  How much does a polar bear weigh? Just enough to break the ice.
+
+  Made with love in beautiful Saint Paul, Minnesota.
+  The East Wing © 2013 Anythin’ Goes LLC and Timothy B. Smith.
+
+  -->
+
   <meta charset="utf-8" />
   <meta name="description" content="The East Wing is a podcast brought to you by Tim Smith, that talks with industry experts about design, solving problems and the keys to creating products with value." />
   
