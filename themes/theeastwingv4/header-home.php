@@ -20,9 +20,9 @@
   -->
 
 	<meta charset="utf-8" />
-	<meta name="description" content="The East Wing is a podcast brought to you by Tim Smith, that talks with industry experts about design, solving problems and the keys to creating products with value." />
+	<meta name="description" content="The East Wing is a weekly interview show featuring established and up-and-coming designers, developers, and entrepreneurs." />
 	
-  <title><?php if (is_home()) { ?><?php bloginfo('name'); ?> » <?php bloginfo('description'); ?><?php } else { ?><?php wp_title($sep = ''); ?> » <?php bloginfo('name'); ?><?php } ?></title>
+  <title><?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<link rel="alternate" type="application/rss+xml" href="<?php bloginfo('rss2_url'); ?>" />
