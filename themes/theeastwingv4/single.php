@@ -32,6 +32,11 @@
             
           </p>
           <h2><?php the_title();?> <small>Episode #<?php the_field('episode_number'); ?></small></h2>
+          
+          <?php if (is_preview()) : ?>
+            <p>You are viewing the preview page for Episode <?php the_field('episode_number'); ?>. This show will be published soon.</p>
+          <?php endif; ?>
+
           <?php the_content(); ?>
 
           <div class="meta-info">
