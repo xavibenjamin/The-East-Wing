@@ -11,14 +11,15 @@
     
     <?php else : ?>
 
-      <h2 class="page-title">Previously Recorded</h2>
+      <h2 class="page-title">Off the Air</h2>
 
     <?php endif; ?>
 
     <div class="text">
 
-      <audio class="live-audio" autoplay name="media"><source src="http://108.163.197.114:8189/;&lang=en&codec=mp3&volume=75&tracking=false&skin=/ffmp3/ffmp3-mcclean.xml&title=The+East+Wing&jsevents=false&welcome" type="audio/mpeg"></audio>
-      
+      <?php if(get_field('live_stream', 'options')) : ?>
+        <audio class="live-audio" autoplay name="media"><source src="http://108.163.197.114:8189/;&lang=en&codec=mp3&volume=75&tracking=false&skin=/ffmp3/ffmp3-mcclean.xml&title=The+East+Wing&jsevents=false&welcome" type="audio/mpeg"></audio>
+      <?php endif; ?>
 
       <?php if (get_field('live_stream', 'options')) : ?>
         <p>
