@@ -41,9 +41,6 @@ function custom_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'custom_excerpt_more' );
 
-// Registering Live Stream Options Page
-register_options_page('Live Stream Options');
-
 // Featured Images
 
 add_theme_support ('post-thumbnails');
@@ -155,6 +152,15 @@ add_action( 'p2p_init', 'my_connection_types' );
 // Fields 
 add_action('acf/register_fields', 'my_register_fields');
 
+
+// Options Page 
+include_once( 'add-ons/acf-options-page/acf-options-page.php' );
+
+
+// Registering Live Stream Options Page
+register_options_page('Live Stream Options');
+
+
 function my_register_fields()
 {
   //include_once('add-ons/acf-repeater/repeater.php');
@@ -242,6 +248,12 @@ function mytheme_admin_bar_render() {
         'id' => 'live-stream-admin-menu',
         'title' => __('Live Stream'),
         'href' => admin_url( 'admin.php?page=acf-options-live-stream-options')
+    ) );
+    $wp_admin_bar->add_menu( array(
+        'parent' => 'live-stream-admin-menu',
+        'id' => 'live_stream_page',
+        'title' => __('Live Page'),
+        'href' => ('/live')
     ) );
 }
 // and we hook our function via
