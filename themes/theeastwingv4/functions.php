@@ -76,22 +76,22 @@ register_post_type('upcoming-guests', array(  'label' => 'Upcoming Guests','desc
 
 
 // Site Wide Sponsor Post Type
-register_post_type('sponsors', array( 'label' => 'Site Wide Sponsors','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => ''),'query_var' => true,'exclude_from_search' => true,'supports' => array('title','editor','custom-fields','thumbnail',),'labels' => array (
-  'name' => 'Site Wide Sponsors',
-  'singular_name' => 'Site Wide Sponsor',
-  'menu_name' => 'Site Wide Sponsors',
-  'add_new' => 'Add Site Wide Sponsor',
-  'add_new_item' => 'Add New Site Wide Sponsor',
-  'edit' => 'Edit',
-  'edit_item' => 'Edit Site Wide Sponsor',
-  'new_item' => 'New Site Wide Sponsor',
-  'view' => 'View Site Wide Sponsor',
-  'view_item' => 'View Site Wide Sponsor',
-  'search_items' => 'Search Site Wide Sponsors',
-  'not_found' => 'No Site Wide Sponsors Found',
-  'not_found_in_trash' => 'No Site Wide Sponsors Found in Trash',
-  'parent' => 'Parent Site Wide Sponsor',
-),) );
+// register_post_type('sponsors', array( 'label' => 'Site Wide Sponsors','description' => '','public' => true,'show_ui' => true,'show_in_menu' => true,'capability_type' => 'post','hierarchical' => false,'rewrite' => array('slug' => ''),'query_var' => true,'exclude_from_search' => true,'supports' => array('title','editor','custom-fields','thumbnail',),'labels' => array (
+//   'name' => 'Site Wide Sponsors',
+//   'singular_name' => 'Site Wide Sponsor',
+//   'menu_name' => 'Site Wide Sponsors',
+//   'add_new' => 'Add Site Wide Sponsor',
+//   'add_new_item' => 'Add New Site Wide Sponsor',
+//   'edit' => 'Edit',
+//   'edit_item' => 'Edit Site Wide Sponsor',
+//   'new_item' => 'New Site Wide Sponsor',
+//   'view' => 'View Site Wide Sponsor',
+//   'view_item' => 'View Site Wide Sponsor',
+//   'search_items' => 'Search Site Wide Sponsors',
+//   'not_found' => 'No Site Wide Sponsors Found',
+//   'not_found_in_trash' => 'No Site Wide Sponsors Found in Trash',
+//   'parent' => 'Parent Site Wide Sponsor',
+// ),) );
 
 
 // Off Air Post Type
