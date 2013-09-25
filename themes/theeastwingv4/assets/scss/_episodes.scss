@@ -32,6 +32,7 @@
     }
     a {
       border-bottom: none;
+      text-decoration: none;
       &:hover {
         color: $primaryOrange;
       }
@@ -58,11 +59,11 @@
           display: none;
         }
       }
-    } 
+    }
   }
-  
+
   .single, .page {
-    img {
+    .entry img {
       display: none;
     }
     .text {

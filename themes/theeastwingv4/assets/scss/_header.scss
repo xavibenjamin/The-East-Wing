@@ -12,6 +12,7 @@
     border-bottom: none;
     color: lighten($darkPurple, 40%);
     margin: 0 4.5% 0 0;
+    text-decoration: none;
     &:last-child {
       margin: 0;
     }
@@ -194,9 +195,10 @@
     background: #f3f3f3;
   }
   h2 {
-    font-size: 1.3em;
-    font-weight: bold;
+    font-size: .85em;
+    font-weight: 800;
     margin: 0 0 4%;
+    text-transform: uppercase;
   }
   h3 {
     font-size: 1.1em;
@@ -227,9 +229,6 @@
       float: left;
       margin: 0 3.5% 0 0;
     }
-    @media screen and (max-width: 500px ) {
-      display: none;
-    }
   }
   span {
     color: $bodyColor;
@@ -238,7 +237,7 @@
 }
 
 .adspot {
-  @extend .guest-info;
+  float: left;
   width: 55%;
   text-align: left;
   @media screen and (max-width: 700px ) {
@@ -249,7 +248,23 @@
   }
   img {
     float: left;
-    height: 100px; width: 150px;
     margin: 0 3.5% 0 0;
   }
+}
+
+
+.fusiontext {
+  border-bottom: none;
+  display: block;
+  line-height: 140%;
+  margin: 0 0 .65em;
+}
+
+.fusionlink {
+  border-bottom: none;
+  color: lighten($bodyColor, 55%);
+  text-transform: uppercase;
+  font-size: .75em;
+  font-weight: bold;
+  text-decoration: none;
 }
