@@ -35,9 +35,11 @@ footer {
   p {
     color: lighten($bodyColor, 20%);
     font-size: 1.1em;
-    line-height: 160%;
+    line-height: 170%;
     a {
+      border-bottom: none;
       color: lighten($bodyColor, 20%);
+      text-decoration: underline !important;
     }
   }
 }
@@ -74,5 +76,29 @@ footer {
     &:hover {
       color: rgba(white, .8);
     }
+  }
+}
+
+
+// Bandwidth Sponsor
+
+.half {
+  margin: 2em 0 0;
+}
+
+.left {
+  float: left;
+  @media screen and (max-width: 580px ) {
+    float: none;
+  }
+}
+
+.bsponsor-wrapper {
+  float: right;
+  width: 305px;
+  height: 133px;
+  @media screen and (max-width: 580px ) {
+    float: none;
+    margin: 2em auto 0;
   }
 }

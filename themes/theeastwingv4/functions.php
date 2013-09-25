@@ -29,7 +29,7 @@ function thematic_widgets_init() {
 		'before_widget' => '<div class="widget">',
 		'after_widget' => '</div>',
 	));
-  	
+
 	// Finished intializing Widgets plugin, now let's load the thematic default widgets
 }
 
@@ -149,17 +149,18 @@ add_action( 'p2p_init', 'my_connection_types' );
 
 // Registering Fields for Live Stream Options Page
 
-// Fields 
+// Fields
 add_action('acf/register_fields', 'my_register_fields');
 
 
-// Options Page 
+// Options Page
 include_once( 'add-ons/acf-options-page/acf-options-page.php' );
 
 
 // Registering Live Stream Options Page
 register_options_page('Live Stream Options');
 
+register_options_page('AdSpot Options');
 
 function my_register_fields()
 {
@@ -168,7 +169,7 @@ function my_register_fields()
   //include_once('add-ons/acf-flexible-content/flexible-content.php');
 }
 
-// Options Page 
+// Options Page
 //include_once( 'add-ons/acf-options-page/acf-options-page.php' );
 
 
@@ -229,6 +230,64 @@ if(function_exists("register_field_group"))
     'menu_order' => 0,
   ));
 }
+
+/**
+ *  Register AdSpot Fields
+ */
+
+if(function_exists("register_field_group"))
+{
+  register_field_group(array (
+    'id' => 'acf_bandwidth-sponsor',
+    'title' => 'Bandwidth Sponsor',
+    'fields' => array (
+      array (
+        'key' => 'field_5243265780be1',
+        'label' => 'bSponsor Logo',
+        'name' => 'bsponsor_logo',
+        'type' => 'image',
+        'save_format' => 'url',
+        'preview_size' => 'full',
+        'library' => 'all',
+      ),
+      array (
+        'key' => 'field_524326b080be2',
+        'label' => 'bSponsor URL',
+        'name' => 'bsponsor_url',
+        'type' => 'text',
+        'default_value' => '',
+        'formatting' => 'none',
+      ),
+      array (
+        'key' => 'field_52432a02d0d25',
+        'label' => 'bSponsor',
+        'name' => 'bsponsor',
+        'type' => 'true_false',
+        'message' => '',
+        'default_value' => 0,
+      ),
+    ),
+    'location' => array (
+      array (
+        array (
+          'param' => 'options_page',
+          'operator' => '==',
+          'value' => 'acf-options-adspot-options',
+          'order_no' => 0,
+          'group_no' => 0,
+        ),
+      ),
+    ),
+    'options' => array (
+      'position' => 'normal',
+      'layout' => 'default',
+      'hide_on_screen' => array (
+      ),
+    ),
+    'menu_order' => 0,
+  ));
+}
+
 
 // Messing with WP Admin Bar
 

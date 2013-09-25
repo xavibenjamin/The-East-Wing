@@ -13,10 +13,20 @@
 
   <section class="helpful-links">
     <div class="contain">
-      <p><a href="https://twitter.com/the_eastwing" class="twitter-follow-button" data-show-count="false">Follow @the_eastwing</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></p>
-      <p><a href="/live">Live Stream</a> &middot; <a href="/schedule">Broadcast Schedule</a></p>
-      <p><a href="http://itunes.apple.com/us/podcast/the-east-wing/id503801143" target="_blank">Subscribe on iTunes</a> &middot; <a href="http://theeastwing.net/feed/podcast/" target="_blank">Subscribe via RSS</a></p>
+      <div class="half left">
+        <p><a href="https://twitter.com/the_eastwing" class="twitter-follow-button" data-show-count="false">Follow @the_eastwing</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script></p>
+        <p><a href="/live">Live Stream</a> &middot; <a href="/schedule">Broadcast Schedule</a></p>
+        <p><a href="http://itunes.apple.com/us/podcast/the-east-wing/id503801143" target="_blank">Subscribe on iTunes</a> &middot; <a href="http://theeastwing.net/feed/podcast/" target="_blank">Subscribe via RSS</a></p>
+      </div>
+
+      <div class="bsponsor-wrapper">
+        <?php if (get_field('bsponsor', 'options')) : ?>
+          <figure class="bSponsor">
+            <a href="<?php the_field('bsponsor_url', 'options'); ?>"><img src="<?php the_field('bsponsor_logo', 'options'); ?>" alt="Bandwidth Sponsor"></a>
+          </figure>
+        <?php endif; ?>
+      </div><!-- .bsponsor-wrapper -->
     </div><!-- .contain -->
   </section><!-- .helpful-links -->
 
@@ -43,7 +53,7 @@
   })();
 
 </script>
-  
+
   <!--WP Generated Footer -->
   <?php wp_footer(); ?>
   <!--End WP Generated Footer -->
