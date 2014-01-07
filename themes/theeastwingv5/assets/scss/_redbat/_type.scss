@@ -1,0 +1,131 @@
+/*
+
+TYPE
+-------------------------------------------
+Table of Contents
+
+	- Base Type
+
+	- Fonts
+
+	- Headings
+
+	- Text
+
+	- Inline Type
+
+	- Blockquote
+
+	- hr
+
+	- Links
+
+------------------------------------------- */
+
+
+/*
+
+BASE TYPE
+------------------------------------------- */
+
+body {
+	font-size: 110%;
+	line-height: 140%;
+	// color: $bodyColor;
+}
+
+// TYPE SIZE VARIABLES
+
+$text-size-xs: .8em;
+$text-size-s: .9em;
+$text-size-m: 1em;
+$text-size-l: 1.5em;
+$text-size-xl: 2em;
+
+%heading-size-s { font-size: .95em;}
+%heading-size-m { font-size: 1.25em;}
+%heading-size-l { font-size: 1.5em;}
+%heading-size-xl { font-size: 2em;}
+
+
+/*
+
+FONTS
+------------------------------------------- */
+
+// %sans {
+// 	font-family: ;
+// }
+
+// %serif {
+// 	font-family: ;
+// }
+
+
+/*
+
+HEADINGS
+------------------------------------------- */
+
+
+/*
+
+TEXT
+------------------------------------------- */
+
+
+/*
+
+INLINE TYPE
+------------------------------------------- */
+
+strong {
+	font-weight: bold;
+}
+
+em {
+	font-style: italic;
+}
+
+
+/*
+
+BLOCKQUOTE
+------------------------------------------- */
+
+
+/*
+
+HR
+------------------------------------------- */
+
+hr {
+	// border: solid $borderColor;
+	border-width: 5px 0 0;
+	clear: both;
+	// margin: $spacing-m auto;
+	height: 0;
+	width: auto;
+	max-width: 350px;
+	display: block;
+	padding: 0;
+}
+
+
+/*
+
+LINKS
+------------------------------------------- */
+
+
+/*
+
+ICON FONT
+------------------------------------------- */
+
+[data-icon]:before {
+  content: attr(data-icon);
+  // @include iconfont;
+  speak: none;
+  vertical-align: top;
+}
