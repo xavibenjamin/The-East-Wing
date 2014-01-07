@@ -31,7 +31,8 @@ BASE TYPE
 body {
 	font-size: 110%;
 	line-height: 140%;
-	// color: $bodyColor;
+	color: $bodyColor;
+	@extend %sans;
 }
 
 // TYPE SIZE VARIABLES
@@ -53,9 +54,9 @@ $text-size-xl: 2em;
 FONTS
 ------------------------------------------- */
 
-// %sans {
-// 	font-family: ;
-// }
+%sans {
+	font-family: "ff-dagny-web-pro",sans-serif;
+}
 
 // %serif {
 // 	font-family: ;
@@ -67,12 +68,39 @@ FONTS
 HEADINGS
 ------------------------------------------- */
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+ color: $darkColor;
+ font-weight: 700;
+ margin-bottom: $spacing-s;
+}
+
+h1 { font-size: 1.3em; }
+h2 { font-size: 1.2em; }
+h3 { font-size: 1.1em; }
 
 /*
 
 TEXT
 ------------------------------------------- */
+p {
+	font-size: 1.1em;
+	line-height: 140%;
+	margin: 0 0 $spacing-s;
+}
 
+ul {
+	list-style-type: square;
+	margin: 0 0 $spacing-s  $spacing-l;
+	li {
+		font-size: 1.1em;
+		margin-bottom: 5px;
+	}
+}
 
 /*
 
@@ -116,7 +144,13 @@ hr {
 
 LINKS
 ------------------------------------------- */
-
+a {
+	color: $linkColor;
+	@include transition(.2s ease-in-out);
+	&:hover {
+		color: #aaa;
+	}
+}
 
 /*
 

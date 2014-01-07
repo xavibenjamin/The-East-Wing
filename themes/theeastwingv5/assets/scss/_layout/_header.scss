@@ -1,0 +1,31 @@
+/*
+HEADER
+--------------------------------------- */
+
+.site__header {
+  border-bottom: 1px solid $borderColor;
+  margin: 0 0 $spacing-l;
+  padding: 0 0 $spacing-s;
+}
+
+.header__nav {
+  margin: $spacing-xxs 0 0;
+  ul {margin: 0;}
+  li {
+    display: inline-block;
+    font-size: .9em;
+    margin: 0;
+    &:last-child {
+      &:after {
+        content: "";
+        margin: 0;
+      }
+    }
+    &:after {
+      content: "/";
+      color: darken($borderColor, 10%);
+      margin: 0 $spacing-xxs;
+    }
+
+  }
+}

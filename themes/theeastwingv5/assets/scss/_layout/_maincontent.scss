@@ -1,0 +1,37 @@
+/*
+MAIN CONTENT
+--------------------------------------- */
+
+.show__description {
+  color: $darkColor;
+  font-size: 1.4em;
+}
+
+
+/* Off Air Related Stuff
+================================== */
+
+.entry {
+  h2 {
+    margin-bottom: 5px;
+    small {
+      color: lighten($bodyColor, 30%);
+      font-size: .70em;
+      margin: 0 0 0 $spacing-m;
+    }
+  }
+}
+
+.pubdate {
+  color: lighten($bodyColor, 10%);
+  font-size: .8em;
+}
+
+.podPress_content_audio_mp3 {
+  border-bottom: 1px solid $borderColor !important;
+  padding: 0 0 $spacing-xxs !important;
+  margin: 0 0 $spacing-s !important;
+}
+.podpress_mediafile_title {
+  display: none;
+}

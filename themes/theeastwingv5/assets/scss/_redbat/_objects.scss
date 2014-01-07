@@ -4,3 +4,16 @@ OBJECTS
 -------------------------------------------
 
 */
+
+body {
+  background: $jazzColor;
+}
+
+.contain {
+  width: 600px;
+  margin: 0 auto $spacing-l;
+  @extend %clearfix;
+
+  background: white;
+  padding: $spacing-l;
+}

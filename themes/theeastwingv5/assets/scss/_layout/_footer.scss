@@ -1,0 +1,11 @@
+/*
+FOOTER
+--------------------------------------- */
+
+.site__footer {
+  margin-top: $spacing-xl;
+  small {
+    color: lighten($bodyColor, 20%);
+    font-size: .8em;
+  }
+}
