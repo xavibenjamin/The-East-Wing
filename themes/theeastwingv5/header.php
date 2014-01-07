@@ -50,6 +50,7 @@
       <ul>
         <li><a href="/contact">Contact Tim</a></li>
         <li><a href="/sponsorship">Sponsor The East Wing</a></li>
+        <li><a href="http://twitter.com/the_eastwing">@the_eastwing</a></li>
       </ul>
     </nav>
   </header>
