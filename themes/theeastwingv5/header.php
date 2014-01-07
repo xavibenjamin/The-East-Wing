@@ -48,8 +48,9 @@
     <a href="/"><img src="<?php bloginfo('template_url'); ?>/assets/img/eastwing_1400.jpg" alt="Cover Art for The East Wing"></a>
     <nav class="header__nav" role="navigation">
       <ul>
-        <li><a href="/contact">Contact Tim</a></li>
-        <li><a href="/sponsorship">Sponsor The East Wing</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/sponsorship">Sponsor</a></li>
         <li><a href="http://twitter.com/the_eastwing">@the_eastwing</a></li>
       </ul>
     </nav>
