@@ -5,33 +5,33 @@ This guide is meant for developers wanting to work on the plugin code.
 Make a fork and clone it:
 
 ```
-git clone --recurse-submodules git@github.com:{YOUR GITHUB USERNAME}/wp-posts-to-posts.git posts-to-posts
+git clone --recursive git@github.com:{YOUR GITHUB USERNAME}/wp-posts-to-posts.git posts-to-posts
 ```
 
 You can now work on the PHP and CSS files. Please follow the [WordPress Coding Standards](http://make.wordpress.org/core/handbook/coding-standards/).
 
-### JavaScript
+### Unit Tests
 
-Don't modify `admin/box.js` directly. Instead:
+If you want to add a new feature, please consider adding a new test for it as well.
 
-- [Install node.js](https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager).
+The following instructions assume a UNIX-like environment (OS X, Linux, etc.).
 
-- Install [CoffeeScript](http://coffeescript.org):
+Step 1: Install and configure the official WordPress testing suite:
 
-```
-npm install -g coffee-script
-```
-
-and edit the `admin/box.coffee` file. To compile it, run:
-
-```
-coffee -c admin
+```bash
+./bin/install-wp-tests
 ```
 
-### Testing
+Note that all data in the test DB will be _deleted_ once you run the tests.
 
-The plugin comes with a few unit tests.
+Step 2: Install PHPUnit via [Composer](https://getcomposer.org):
 
-1. Install [Composer](https://getcomposer.org).
-2. Run `composer install --dev`.
-3. Run `vendor/bin/phpunit`.
+```bash
+php composer.phar install --dev
+```
+
+Step 3: Run the tests:
+
+```bash
+./vendor/bin/phpunit
+```

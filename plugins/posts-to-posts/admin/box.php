@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * A metabox in wp-admin
+ */
 class P2P_Box {
 	private $ctype;
 
@@ -158,6 +161,9 @@ class P2P_Box {
 	}
 
 	protected function connection_row( $p2p_id, $item, $render = false ) {
+		
+		$item->title = apply_filters( 'p2p_connected_title', $item->get_title(), $item->get_object(), $this->ctype );
+
 		$data = array();
 
 		foreach ( $this->columns as $key => $field ) {

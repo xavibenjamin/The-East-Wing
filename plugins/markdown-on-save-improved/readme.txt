@@ -1,13 +1,15 @@
 === Markdown on Save Improved ===
 Contributors: mattwiebe
 Tags: markdown, formatting, mobile
-Requires at least: 3.2
-Tested up to: 3.5.1
-Stable tag: 2.4.2
+Requires at least: 3.4
+Tested up to: 3.8
+Stable tag: 2.5
 
 Markdown + WordPress = writing bliss.
 
 == Description ==
+
+*This plugin is deprecated*. Use the much-better-supported and more-frequently-updated Markdown module in [Jetpack](https://wordpress.org/plugins/jetpack/), by the same author. This plugin will not receive any updates or support from here on out.
 
 WordPress will process your post with Markdown unless you tell it not to. You probably won't want to, since writing in Markdown is so awesome. Compatible with mobile apps and 3rd-party blogging tools.
 
@@ -27,6 +29,12 @@ The markdown version is stored separately (in the `post_content_formatted` colum
 1. The meta box where you can disable Markdown formatting or convert Markdown to HTML.
 
 == Frequently Asked Questions ==
+
+= What made you retire this plugin? =
+
+Plain and simple: I get paid to write and maintain the Jetpack version. It gets used by a lot more people and gets regular bug fixes. There are even support people who will help you if you have problems!
+
+If you liked MoSI, you'll love the Jetpack Markdown module. It's even easier to use - just enable it for a blog and every post is just converted to Markdown. There are tons of edge case fixes, improved GitHub-Flavoured syntax additions, better revision handling, and more.
 
 = How do I use Markdown syntax? =
 
@@ -64,6 +72,20 @@ Note that you can still disable Markdown formatting with a `<!--no-markdown-->` 
 Just deactivate it. The Markdown version is stored separately, so without the plugin, you'll just revert to editing the HTML version.
 
 == Changelog ==
+
+= 2.5 =
+
+* Deprecate this plugin in favour of Jetpack's Markdown module
+* Remove the HTMl to Markdown conversion
+* Update the Markdown Extra library
+
+= 2.4.4 =
+
+* Fix previewing published/scheduled posts
+
+= 2.4.3 =
+
+* Don't show the metabox on unsupported post types.
 
 = 2.4.2 =
 

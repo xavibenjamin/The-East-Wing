@@ -52,7 +52,8 @@ class acf_field_functions
 	
 	function load_value($value, $post_id, $field)
 	{
-		$cache = wp_cache_get( 'load_value/post_id=' . $post_id . '/name=' . $field['name'], 'acf', false, $found = false );
+		$found = false;
+		$cache = wp_cache_get( 'load_value/post_id=' . $post_id . '/name=' . $field['name'], 'acf', false, $found );
 		
 		if( $found )
 		{
@@ -216,13 +217,50 @@ class acf_field_functions
 			// update_option -> http://core.trac.wordpress.org/browser/tags/3.5.1/wp-includes/option.php#L0: line 215 (does not use stripslashes_deep)
 			$value = stripslashes_deep($value);
 			
-			update_option( $post_id . '_' . $field['name'], $value );
-			update_option( '_' . $post_id . '_' . $field['name'], $field['key'] );
+			$this->update_option( $post_id . '_' . $field['name'], $value );
+			$this->update_option( '_' . $post_id . '_' . $field['name'], $field['key'] );
 		}
 		
 		
 		// update the cache
 		wp_cache_set( 'load_value/post_id=' . $post_id . '/name=' . $field['name'], $value, 'acf' );
+		
+	}
+	
+	
+	/*
+	*  update_option
+	*
+	*  This function is a wrapper for the WP update_option but provides logic for a 'no' autoload
+	*
+	*  @type	function
+	*  @date	4/01/2014
+	*  @since	5.0.0
+	*
+	*  @param	$option (string)
+	*  @param	$value (mixed)
+	*  @return	(boolean)
+	*/
+	
+	function update_option( $option = '', $value = false, $autoload = 'no' ) {
+		
+		// vars
+		$deprecated = '';
+		$return = false;
+		
+		
+		if( get_option($option) !== false )
+		{
+		    $return = update_option( $option, $value );
+		}
+		else
+		{
+			$return = add_option( $option, $value, $deprecated, $autoload );
+		}
+		
+		
+		// return
+		return $return;
 		
 	}
 	
@@ -330,11 +368,11 @@ class acf_field_functions
 					$field = $row['meta_value'];
 					$field = maybe_unserialize( $field );
 					$field = maybe_unserialize( $field ); // run again for WPML
+					
+					
+					// add field_group ID
+					$field['field_group'] = $row['post_id'];
 				}
-				
-				
-				// add field_group ID
-				$field['field_group'] = $row['post_id'];
 				
 			}
 		}
@@ -381,6 +419,7 @@ class acf_field_functions
 			'key' => '',
 			'label' => '',
 			'name' => '',
+			'_name' => '',
 			'type' => 'text',
 			'order_no' => 1,
 			'instructions' => '',
@@ -424,6 +463,20 @@ class acf_field_functions
 		}
 		
 		
+		// _name
+		if( !$field['_name'] )
+		{
+			$field['_name'] = $field['name'];
+		}
+		
+		
+		// clean up conditional logic keys
+		if( !empty($field['conditional_logic']['rules']) )
+		{
+			$field['conditional_logic']['rules'] = array_values($field['conditional_logic']['rules']);
+		}
+		
+		
 		// return
 		return $field;
 	}
@@ -449,6 +502,10 @@ class acf_field_functions
 		$field = apply_filters('acf/update_field/type=' . $field['type'], $field, $post_id ); // new filter
 		
 		
+		// clear cache
+		wp_cache_delete( 'load_field/key=' . $field['key'], 'acf' );
+	
+		
 		// save
 		update_post_meta( $post_id, $field['key'], $field );
 	}
@@ -464,6 +521,10 @@ class acf_field_functions
 	
 	function delete_field( $post_id, $field_key )
 	{
+		// clear cache
+		wp_cache_delete( 'load_field/key=' . $field['key'], 'acf' );
+		
+		
 		// delete
 		delete_post_meta($post_id, $field_key);
 	}
@@ -490,75 +551,24 @@ class acf_field_functions
 		
 		
 		// conditional logic
-		// - isset is needed for the edit field group page where fields are created without many parameters
-		if( $field['conditional_logic']['status'] ):
-			
-			$join = ' && ';
-			if( $field['conditional_logic']['allorany'] == "any" )
-			{
-				$join = ' || ';
-			}
+		if( $field['conditional_logic']['status'] )
+		{
+			$field['conditional_logic']['field'] = $field['key'];
 			
 			?>
 <script type="text/javascript">
-(function($){
+(function($) {
 	
-	// create the conditional function
-	$(document).live('acf/conditional_logic/<?php echo $field['key']; ?>', function(){
-		
-		var field = $('.field_key-<?php echo $field['key']; ?>');
-
-<?php
-
-		$if = array();
-		foreach( $field['conditional_logic']['rules'] as $rule )
-		{
-			$if[] = 'acf.conditional_logic.calculate({ field : "'. $field['key'] .'", toggle : "' . $rule['field'] . '", operator : "' . $rule['operator'] .'", value : "' . $rule['value'] . '"})' ;
-		}
-		
-?>
-		if(<?php echo implode( $join, $if ); ?>)
-		{
-			field.removeClass('acf-conditional_logic-hide').addClass('acf-conditional_logic-show');
-		}
-		else
-		{
-			field.removeClass('acf-conditional_logic-show').addClass('acf-conditional_logic-hide');
-		}
-		
-	});
-	
-	
-	// add change events to all fields
-<?php 
-
-$already_added = array();
-
-foreach( $field['conditional_logic']['rules'] as $rule ): 
-
-	if( in_array( $rule['field'], $already_added) )
+	if( typeof acf !== 'undefined' )
 	{
-		continue;
-	}
-	else
-	{
-		$already_added[] = $rule['field'];
+		acf.conditional_logic.items.push(<?php echo json_encode($field['conditional_logic']); ?>);
 	}
 	
-	?>
-	$('.field_key-<?php echo $rule['field']; ?> *[name]').live('change', function(){
-		$(document).trigger('acf/conditional_logic/<?php echo $field['key']; ?>');
-	});
-<?php endforeach; ?>
-	
-	$(document).live('acf/setup_fields', function(e, postbox){
-		$(document).trigger('acf/conditional_logic/<?php echo $field['key']; ?>');
-	});
-		
-})(jQuery);
+})(jQuery);	
 </script>
 			<?php
-		endif;
+		}
+		
 	}
 	
 	

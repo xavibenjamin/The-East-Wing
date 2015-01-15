@@ -1,15 +1,15 @@
 <?php
 /*
 Plugin Name: Markdown on Save Improved
-Description: Allows you to compose content in Markdown on a per-item basis from WP admin or mobile/3rd-party apps. The markdown version is stored separately, so you can deactivate this plugin and your posts won't spew out Markdown. Based on <a href="http://wordpress.org/extend/plugins/markdown-osi/">Mark Jaquith's plugin</a>.
-Version: 2.4.2
+Description: Deprecated. Please use the Markdown module in the Jetpack plugin!
+Version: 2.5
 Author: Matt Wiebe
 Author URI: http://somadesign.ca/
 License: GPL v2
 */
 
 /*
- * Copyright 2011-12 Matt Wiebe. GPL v2, of course.
+ * Copyright 2011-14 Matt Wiebe. GPL v2, of course.
  *
  * This software is forked from the original Markdown on Save plugin (c) Mark Jaquith
  * It uses the Markdown Extra and Markdownify libraries. Copyrights and licenses indicated in said libararies.
@@ -20,9 +20,9 @@ class SD_Markdown {
 
 	const PM = '_sd_disable_markdown';
 	const MD = '_sd_is_markdown';
-	const CONVERT = 'sd_convert_to_markdown';
-	const VERSION = '2.4.2';
+	const VERSION = '2.5';
 	const VERSION_OPT = 'mosi-version';
+	const NAG_OPTION = 'mosi-nag';
 
 	protected $new_api_post = false;
 
@@ -44,12 +44,12 @@ class SD_Markdown {
 		add_action( 'load-post-new.php', array( $this, 'load' ) );
 		add_action( 'xmlrpc_call_success_mw_newPost', array( $this, 'xmlrpc_new_post' ), 10, 2 );
 
-		remove_action( 'the_content', 'wpautop' );
-
 		add_filter( 'wp_insert_post_data', array( $this, 'wp_insert_post_data' ), 10, 2 );
 		add_filter( 'edit_post_content', array( $this, 'edit_post_content' ), 10, 2 );
 		add_filter( 'edit_post_content_filtered', array( $this, 'edit_post_content_filtered' ), 10, 2 );
-		add_filter( 'the_content', array($this, 'maybe_default_formatting' ) );
+
+		add_action( 'admin_menu', array( $this, 'jetpack_convert_page_register' ) );
+		add_action( 'admin_notices', array( $this, 'jetpack_nag_notice' ) );
 
 		// Markdown breaks autoembedding by wrapping URLs on their own line in paragraphs
 		if ( get_option( 'embed_autourls' ) )
@@ -59,16 +59,88 @@ class SD_Markdown {
 			$this->maybe_prime_post_data();
 	}
 
+	public function jetpack_convert_page_register() {
+		add_management_page( 'Markdown on Save Improved Convert', 'MoSI Convert', 'manage_options', 'mosi-convert', array( $this, 'jetpack_convert_page') );
+	}
+
+	public function jetpack_convert_page() {
+		$did_conversion = false;
+		$do_conversion = isset( $_POST['mosi-convert'] ) && wp_verify_nonce( $_POST['mosi-convert'], 'mosi-convert' );
+		if ( $do_conversion ) {
+			$did_conversion = $this->convert_posts_to_jetpack();
+		}
+		?>
+		<h2><?php _e( 'Markdown on Save Improved Convert to Jetpack', 'markdown-osi' ); ?></h2>
+		<?php if ( $do_conversion && $did_conversion ) {
+			// turn off nag
+			update_option( self::NAG_OPTION, true );
+			printf( '<p>%s</p>', esc_html__( 'Congratulations! You have successfully updated your posts to work with Jetpack&rsquo;s Markdown module. Be sure to disable Markdown on Save Improved and enable the Jetpack Markdown module.', 'markdown-osi' ) );
+			printf( '<p><a target="_blank" href="%s">%s</a></p>', 'http://jetpack.me/support/markdown/', 'How to enable the Jetpack Markdown module.' );
+		} else { ?>
+			<p><?php _e( 'Click the shiny button below to convert your posts to work with Jetpack&rsquo;s Markdown module.', 'markdown-osi' ) ?></p>
+			<form action="<?php echo esc_url( admin_url( 'tools.php?page=mosi-convert' ) );  ?>" method="post">
+				<?php wp_nonce_field( 'mosi-convert', 'mosi-convert' ); ?>
+				<?php submit_button( __( 'Convert!', 'markdown-osi' ) ); ?>
+			</form>
+		<?php } ?>
+
+		<?php
+	}
+
+	protected function convert_posts_to_jetpack() {
+		// we need a bit of custom SQL here since core stuff will only be insufficient and annoying.
+		global $wpdb;
+		$new_meta_key = '_wpcom_is_markdown';
+		$query = $wpdb->prepare( "SELECT ID, post_content FROM $wpdb->posts LEFT JOIN $wpdb->postmeta AS meta ON ID = meta.post_id WHERE meta.meta_key = %s", self::MD );
+		$results = $wpdb->get_results( $query );
+		foreach ( $results as $result ) {
+			// unset old meta
+			delete_metadata( 'post', $result->ID, self::MD );
+			// set new meta
+			add_metadata( 'post', $result->ID, $new_meta_key, true );
+			// Jetpack Markdown stores content without the <p>s
+			$result->post_content = $this->unp( $result->post_content );
+			// Update the <p>-less post
+			$wpdb->update( $wpdb->posts, array( 'post_content' => $result->post_content ), array( 'ID' => $result->ID ) );
+		}
+		return true;
+	}
+
+	public function unp( $text ) {
+		return preg_replace( "#<p>(.*?)</p>(\n|$)#ums", '$1$2', $text );
+	}
+
+	public function jetpack_nag_notice() {
+		global $plugin_page;
+		if ( get_option( self::NAG_OPTION ) ) {
+			return;
+		}
+		if ( 'mosi-convert' === $plugin_page  ) {
+			if ( isset( $_GET['action' ] ) && 'dismiss-nag' === $_GET['action'] ) {
+				echo '<div class="updated"><p>';
+				_e( 'You will no longer be nagged about changing to Jetpack, but you can always come back to this page to convert.', 'markdown-osi' );
+				echo '</p></div>';
+				update_option( self::NAG_OPTION, true );
+			}
+			return;
+		}
+		echo '<div class="update-nag"><p>';
+		_e( 'Markdown on Save Improved is no longer being updated, as I have now put all of my Markdown efforts into Jetpack&rsquo;s Markdown module. I highly recommend you use that instead, as it will be better supported and continue to receive updates. Your options are:' , 'markdown-osi' );
+		echo '</p><ol>';
+		printf( '<li><a href="%s" id="mosi-convert">%s</a></li>',
+			admin_url( 'tools.php?page=mosi-convert' ),
+			esc_html__( 'Update your posts to work with Jetpack', 'markdown-osi' )
+		);
+		printf( '<li><a href="%s" id="mosi-dismiss">%s</a></li>',
+			admin_url( 'tools.php?page=mosi-convert&amp;action=dismiss-nag' ),
+			esc_html__( 'Dismiss this notice (keep using Markdown on Save Improved)', 'markdown-osi' )
+		);
+		echo '</ol></div>';
+	}
+
 	protected function add_post_type_support() {
 		add_post_type_support( 'post', 'markdown-osi' );
 		add_post_type_support( 'page', 'markdown-osi' );
-	}
-
-	public function maybe_default_formatting( $content ) {
-		if ( ! post_type_supports( get_post_type(), 'markdown-osi' ) || ! $this->is_markdown( get_the_ID() ) )
-			$content = wpautop( $content );
-
-		return $content;
 	}
 
 	public function xmlrpc_new_post( $post_id, $args ) {
@@ -144,18 +216,18 @@ class SD_Markdown {
 		$nonced = ( isset( $_POST['_sd_markdown_nonce'] ) && wp_verify_nonce( $_POST['_sd_markdown_nonce'], 'sd-markdown-save' ) );
 		$disable_ticked = ( $nonced && isset( $_POST['sd_disable_markdown'] ) );
 		$disable_comment_inserted = ( false !== stripos( $data['post_content'], '<!--no-markdown-->' ) );
-		$do_html_to_markdown = ( $nonced && isset($_POST[self::CONVERT]) );
 		$id = ( isset( $postarr['ID'] ) ) ? $postarr['ID'] : 0;
-
-		$supports = post_type_supports( $postarr['post_type'], 'markdown-osi' );
+		$post_type_to_check = isset( $postarr['post_type'] ) ? $postarr['post_type'] : '';
+		// we need to check the parent of a revision to determine support
+		if ( 'revision' === $post_type_to_check ) {
+			$parent = get_post( $data['post_parent'] );
+			$post_type_to_check = $parent->post_type;
+		}
+		$supports = post_type_supports( $post_type_to_check, 'markdown-osi' );
 
 		// double check in case this is a new xml-rpc post. Disable couldn't be checked.
 		if ( $this->new_api_post )
 			$disable_ticked = false;
-
-		// Maybe do HTML --> Markdown
-		if ( $do_html_to_markdown )
-			$data['post_content'] = $this->html_to_markdown( $data['post_content'] );
 
 		// Make sure markdown processing isn't disabled for this post
 		if ( $supports && ! ( $disable_ticked || $disable_comment_inserted ) ) {
@@ -184,15 +256,6 @@ class SD_Markdown {
 		return preg_replace_callback( '|^\s*<p>(https?://[^\s"]+)</p>\s*$|im', array( $wp_embed, 'autoembed_callback' ), $content );
 	}
 
-	protected function html_to_markdown( $content ) {
-		$content = stripslashes( $content );
-		$content = wpautop( $content );
-		require_once( dirname(__FILE__) . '/markdownify/markdownify_extra.php' );
-		$md = new Markdownify_Extra( true );
-		$content = $md->parseString( $content );
-		return $content;
-	}
-
 	protected function process( $content, $id ) {
 		$this->maybe_load_markdown();
 		// $content is slashed, but Markdown parser hates it precious.
@@ -219,7 +282,7 @@ class SD_Markdown {
 		if ( defined( 'SD_HIDE_MARKDOWN_BOX') && SD_HIDE_MARKDOWN_BOX )
 			return;
 
-		if ( 'side' == $context && in_array( $type, array_keys( get_post_types() ) ) )
+		if ( 'side' == $context && in_array( $type, array_keys( get_post_types() ) ) && post_type_supports( $type, 'markdown-osi' ) )
 			add_meta_box( 'sd-markdown', __( 'Markdown', 'markdown-osi' ), array( $this, 'meta_box' ), $type, 'side', 'high' );
 	}
 
@@ -232,7 +295,6 @@ class SD_Markdown {
 		if ( 'add' !== $screen->action )
 			checked( ! get_post_meta( $post->ID, self::MD, true ) );
 		echo ' /> <label for="sd_disable_markdown">' . __( 'Disable Markdown formatting', 'markdown-osi' ) . '</label></p>';
-		printf( '<p><label><input type="checkbox" name="%s" /> %s</label></p>', self::CONVERT, __('Convert HTML to Markdown (experimental)', 'markdown-osi') );
 	}
 
 	private function is_markdown( $id ) {
