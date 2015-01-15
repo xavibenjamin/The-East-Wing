@@ -45,13 +45,13 @@
 <div class="contain">
 
   <header class="site__header" role="banner">
-    <a href="/"><img src="<?php bloginfo('template_url'); ?>/assets/img/eastwing_1400.jpg" alt="Cover Art for The East Wing"></a>
+    <a href="/"><img src="<?php bloginfo('template_url'); ?>/assets/img/the-east-wing.png" alt="Cover Art for The East Wing"></a>
     <nav class="header__nav" role="navigation">
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/sponsorship">Sponsor</a></li>
-        <li><a href="http://twitter.com/the_eastwing">@the_eastwing</a></li>
+        <li><a href="http://twitter.com/ttimsmith">@ttimsmith</a></li>
       </ul>
     </nav>
   </header>

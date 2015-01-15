@@ -160,17 +160,3 @@ FORMS
 ::-moz-placeholder {  /* Firefox 19+ */
    color: lighten($darkColor, 50%);
 }
-
-.button {
-  background: $linkColor;
-  @include border-radius(2px);
-  padding: 8px 15px;
-  color: white;
-  font-weight: bold;
-  font-size: .85em;
-  margin-top: $spacing-m;
-  @include transition(background .2s ease-in-out);
-  &:hover {
-    background: darken($linkColor, 5%);
-  }
-}

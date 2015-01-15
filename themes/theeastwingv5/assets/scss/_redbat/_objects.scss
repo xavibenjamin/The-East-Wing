@@ -6,7 +6,7 @@ OBJECTS
 */
 
 body {
-  background: $jazzColor;
+  background: darken($jazzColor, 2%);
 }
 
 .contain {
